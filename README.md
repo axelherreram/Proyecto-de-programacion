@@ -28,8 +28,6 @@
 
 ------------
 
-- Realizacion de FrondEnd y BackEnd de un** sistema de facturación**
-
 - Realizacion de FrondEnd y BackEnd de un **sistema de facturación**
 
 	- ¿Quienes realizaron el BackEnd?
