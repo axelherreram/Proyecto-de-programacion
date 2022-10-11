@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Proyecto final programación II
 #### Integrantes
 
@@ -37,3 +38,6 @@
 		- pendiente
 
 ------------
+=======
+# Proyecto-de-programaci-n
+>>>>>>> e29e440d73d54a7725196c521cc761a736a4c544
