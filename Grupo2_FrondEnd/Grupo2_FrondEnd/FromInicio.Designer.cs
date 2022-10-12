@@ -48,7 +48,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(73)))));
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -66,7 +66,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Grupo2_FrondEnd.Properties.Resources.factura;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 337);
+            this.pictureBox4.Location = new System.Drawing.Point(-3, 392);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(41, 46);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,7 +79,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(47, 337);
+            this.button3.Location = new System.Drawing.Point(44, 392);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(181, 46);
             this.button3.TabIndex = 7;
@@ -90,7 +90,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Grupo2_FrondEnd.Properties.Resources.cliente;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 262);
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 317);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 46);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.Black;
-            this.btnClientes.Location = new System.Drawing.Point(47, 262);
+            this.btnClientes.Location = new System.Drawing.Point(44, 317);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(181, 46);
             this.btnClientes.TabIndex = 5;
@@ -114,7 +114,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Grupo2_FrondEnd.Properties.Resources.caracteristicas;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 184);
+            this.pictureBox3.Location = new System.Drawing.Point(-3, 239);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,7 +128,7 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.Black;
-            this.btnProductos.Location = new System.Drawing.Point(47, 184);
+            this.btnProductos.Location = new System.Drawing.Point(44, 239);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(181, 46);
             this.btnProductos.TabIndex = 3;
@@ -138,10 +138,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.logoEmp;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(231, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -151,7 +151,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(2, 133);
+            this.label1.Location = new System.Drawing.Point(2, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 23);
             this.label1.TabIndex = 0;
