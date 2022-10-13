@@ -12,16 +12,16 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class PropiProductos
     {
-        public string idProduc { get; set; }
-        public string nombre { get; set; }
+        public string idProd { get; set; }
+        public string nombreProd { get; set; }
         public DateTime fechaCaducidad { get; set; }
-        public string precio { get; set; }
-        public string Stock { get; set; }
+        public string precioProd { get; set; }
+        public string stock { get; set; }
         public string PostProductos(PropiProductos objProductos)
         {
             //Aqui es la llamada al back
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera");
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -48,7 +48,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //aqui se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objProductos.idProduc);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc?id=" + objProductos.idProd);
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -64,7 +64,7 @@ namespace Grupo2_FrondEnd.Entidades
         public string Actualizar(PropiProductos objProductos)
         {
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objProductos.idProduc);
+            var request = (HttpWebRequest)WebRequest.Create("hhttp://localhost:8080/produc");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -88,7 +88,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //Se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objProductos.idProduc);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc?id=8" + objProductos.idProd);
 
             //Armar mi peticion 
             request.ContentType = "application/json";

@@ -33,7 +33,7 @@ namespace Grupo2_FrondEnd
         {
 
         }
-
+        
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtId.Clear();
@@ -48,7 +48,7 @@ namespace Grupo2_FrondEnd
             if (dialogResult == DialogResult.Yes)
             {
                 PropiProductos objBorar = new PropiProductos();
-                objBorar.idProduc = txtId.Text;
+                objBorar.idProd = txtId.Text;
                 String Respuesta = objBorar.DELETE(objBorar);
                 MessageBox.Show(Respuesta);
                 txtId.Clear();
@@ -62,5 +62,43 @@ namespace Grupo2_FrondEnd
 
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                PropiProductos objPro = new PropiProductos();
+                objPro.nombreProd = txtNombre.Text;
+                objPro.fechaCaducidad = dtmFechaC.Value;
+                objPro.precioProd = txtPrecio.Text;
+                objPro.stock = txtStrock.Text;
+
+               objPro.PostProductos(objPro);
+                
+                //txtId.Clear();
+                //txtNombre.Clear();
+                //txtPrecio.Clear();
+                //txtStrock.Clear();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ocurrio un error");
+            }
+                
+            }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            PropiProductos objPro = new PropiProductos();
+            objPro.idProd= txtId.Text;
+            objPro.BuscarXidProductos(objPro);
+
+            txtNombre.Text = objPro.nombreProd;
+            txtPrecio.Text = objPro.precioProd;
+            txtStrock.Text = objPro.stock;
+        }
     }
-}
+    }
+

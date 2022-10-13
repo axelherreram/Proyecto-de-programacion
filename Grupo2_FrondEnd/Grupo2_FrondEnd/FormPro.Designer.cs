@@ -34,7 +34,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtmFechaC = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.txtStrock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -111,15 +111,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Precio:";
             // 
-            // dateTimePicker1
+            // dtmFechaC
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(206, 58);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(233, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtmFechaC.CalendarFont = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtmFechaC.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtmFechaC.Location = new System.Drawing.Point(206, 58);
+            this.dtmFechaC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtmFechaC.Name = "dtmFechaC";
+            this.dtmFechaC.Size = new System.Drawing.Size(233, 22);
+            this.dtmFechaC.TabIndex = 6;
             // 
             // label4
             // 
@@ -207,6 +207,7 @@
             this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.TabStop = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -218,6 +219,7 @@
             this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.TabStop = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtId
             // 
@@ -249,7 +251,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtmFechaC);
             this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(19, 191);
             this.groupBox2.Name = "groupBox2";
@@ -307,7 +309,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtmFechaC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStrock;
         private System.Windows.Forms.Label label5;
