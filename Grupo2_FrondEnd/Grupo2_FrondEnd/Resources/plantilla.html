@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es">
 <head>
-    <title>Title of the document</title>
+    <meta charset="utf-8"/>
+    <title>Factura</title>
     <style>
         table.border {
             border-collapse: collapse;
         }
+        body {
+            font-family: Arial;
+        }
 
-            table.border th {
-                padding: 5px;
-                border: 1px solid black;
-            }
+        table.border th {
+            padding: 5px;
+            border: 1px solid black;
+        }
 
-            table.border td {
-                padding: 5px;
-                border: 1px solid black;
-            }
+        table.border td {
+            padding: 5px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -30,10 +34,10 @@
                 </table>
             </td>
             <td style="width:20%">
-                <table class="border" style="width:100%">
-                    <tr><td align="center">Nro:</td> <td>@NRO</td></tr>
-                    <tr><td align="center">Hora: </td><td>@HORA</td></tr>
-                    <tr><td align="center">Fecha: </td><td>@FECHA</td></tr>
+                <table class="border" style="width:100%;">
+                    <tr><td align="left">Nro:</td> <td>@NUMERO</td></tr>
+                    <tr><td align="left">Hora:</td><td>@HORA</td></tr>
+                    <tr><td align="left">Fecha:</td><td>@FECHA</td></tr>
                 </table>
             </td>
         </tr>
@@ -80,12 +84,12 @@
                             <td style="border: 0px !important"></td>
                             <td align="left">Iva:</td>
                             <td>@IVA</td>
-                            <tr>
+                        </tr>
+                        <tr>
                             <td style="border: 0px !important"></td>
                             <td style="border: 0px !important"></td>
-                            <td align="left">Total:</td>
+                            <td >Total:</td>
                             <td>@TOTAL</td>
-                            </tr>
                         </tr>
                     </tbody>
                 </table>

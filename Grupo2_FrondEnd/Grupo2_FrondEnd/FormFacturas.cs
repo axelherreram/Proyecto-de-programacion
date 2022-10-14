@@ -14,6 +14,9 @@ using iTextSharp.tool.xml;
 using System.IO;
 using static System.Net.WebRequestMethods;
 using Grupo2_FrondEnd.Entidades;
+using iTextSharp.tool.xml.html;
+using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Grupo2_FrondEnd
 {
@@ -40,41 +43,41 @@ namespace Grupo2_FrondEnd
 
         private void FormFacturas_Load(object sender, EventArgs e)
         {
-            dgvDatos.Columns.Add("Cantidad", "Cantidad");
-            dgvDatos.Columns.Add("Descripcion", "Descripción");
-            dgvDatos.Columns.Add("PrecioUnitario", "P/U");
-            dgvDatos.Columns.Add("subtotal", "Sub total");
+            dgvproductos.Columns.Add("Cantidad", "Cantidad");
+            dgvproductos.Columns.Add("Descripcion", "Descripción");
+            dgvproductos.Columns.Add("PrecioUnitario", "P/U");
+            dgvproductos.Columns.Add("subtotal", "Sub total");
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
 
-            dgvDatos.Rows.Clear();
+            dgvproductos.Rows.Clear();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             //Guardar el archivo en local
-            SaveFileDialog guardarFile = new SaveFileDialog();
-            guardarFile.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
-            
+           SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+
             //Leemos el HTMl
-            string paginaHtml_texto = Properties.Resources.plantilla.ToString();
+            string PaginaHTML_Texto = Properties.Resources.plantilla.ToString();
             //Info factura
             //paginaHtml_texto = paginaHtml_texto.Replace("@NRO", lbNumFactura.Text);
-            paginaHtml_texto = paginaHtml_texto.Replace("@HORA", lbHora.Text);
-            paginaHtml_texto = paginaHtml_texto.Replace("@FECHA", lbFecha.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@HORA", lbHora.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", lbFecha.Text);
 
             //Info cliente
-            paginaHtml_texto = paginaHtml_texto.Replace("@NIT", txtNit.Text);
-            paginaHtml_texto = paginaHtml_texto.Replace("@CLIENTE",txtNombre.Text);
-            paginaHtml_texto = paginaHtml_texto.Replace("@DIRECCION", txtDireccion.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NIT", txtNit.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE",txtNombre.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DIRECCION", txtDireccion.Text);
 
             //Escribir el valor del dataGrid
             string filas = string.Empty;
             decimal total = 0;
-            foreach (DataGridViewRow row in dgvDatos.Rows)
+            foreach (DataGridViewRow row in dgvproductos.Rows)
             {
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
@@ -84,31 +87,36 @@ namespace Grupo2_FrondEnd
                 filas += "</tr>";
                 total += decimal.Parse(row.Cells["subtotal"].Value.ToString());
             }
-            paginaHtml_texto = paginaHtml_texto.Replace("@FILAS", filas);
-            paginaHtml_texto = paginaHtml_texto.Replace("@TOTAL", total.ToString());
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@IVA", txtIva.Text);
 
-            if (guardarFile.ShowDialog()== DialogResult.OK)
+
+            if (savefile.ShowDialog()== DialogResult.OK)
             {
+               
                 //crea el archivo en memoria
-                using (FileStream stream = new FileStream(guardarFile.FileName, FileMode.Create))
+                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
                 {
                     //Creamos un nuevo documento y lo definimos como PDF
-                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+                    Document pdfDoc = new Document(PageSize.A4, 0, 0, 0, 0);
 
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     pdfDoc.Add(new Phrase(""));
 
-                    //imagen de nuestro logo
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoEmp,System.Drawing.Imaging.ImageFormat.Png);
-                    img.ScaleToFit(80, 60);
+                    //Agregamos un logo a nuestra factura
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoEmp, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(70, 70);
                     img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top -60);
+
+                    //Asignamos una posision a la imgagen
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
                     pdfDoc.Add(img);
 
 
-                    //pdfDoc.Add(new Phrase("Hola Mundo"));
-                    using (StringReader sr = new StringReader(paginaHtml_texto))
+                    
+                    using (StringReader sr = new StringReader(PaginaHTML_Texto))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
                     }
@@ -118,38 +126,27 @@ namespace Grupo2_FrondEnd
                 }
 
             }
-            {
-
-            }
              
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            double Total = 0;
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                Total += Convert.ToDouble(row.Cells["subtotal"].Value);
-            }
-            txtTotal1.Text = Total.ToString();
-            
+            int indice_fila = dgvproductos.Rows.Add();
+            DataGridViewRow row = dgvproductos.Rows[indice_fila];
+            string filas = string.Empty;
+
+            //txtPrecio.Text = objPro.precio;
+            row.Cells["Cantidad"].Value = txtCantidad.Text;
+            row.Cells["Descripcion"].Value = txtDess.Text;
+            row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
+            row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
+
         }
         
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //PropiProductos objPro = new PropiProductos();
 
-            int indice_fila = dgvDatos.Rows.Add();
-            DataGridViewRow row = dgvDatos.Rows[indice_fila];
-            string filas = string.Empty;
-            decimal total = 0;
-            //falta llamar el motodo
-            //txtPrecio.Text = objPro.precio;
-            row.Cells["Cantidad"].Value = txtCantidad.Text;
-            row.Cells["Descripcion"].Value = txtDess.Text;
-            row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
-            row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
+            
             
         }
 
@@ -158,6 +155,22 @@ namespace Grupo2_FrondEnd
             Form form = new FormNewCli(); 
             form.ShowDialog();
               
+        }
+
+        private void txtCalcular_Click(object sender, EventArgs e)
+        {
+            double Total = 0;
+            double iva = 0;
+            double ivaTotal = 0;
+            foreach (DataGridViewRow row in dgvproductos.Rows)
+            {
+                Total += Convert.ToDouble(row.Cells["subtotal"].Value);
+            }
+            iva = ((Total/1.12)*0.12);
+            Total -= iva;
+            txtIva.Text = iva.ToString("0. ##");
+            txtTotal1.Text = Total.ToString("0. ##");
+
         }
     }
 }

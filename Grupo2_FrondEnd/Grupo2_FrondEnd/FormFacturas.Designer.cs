@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
@@ -61,16 +61,17 @@
             this.txtTotal1 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.dgvproductos = new System.Windows.Forms.DataGridView();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtDess = new System.Windows.Forms.TextBox();
+            this.txtCalcular = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -252,7 +253,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImprimir.Location = new System.Drawing.Point(528, 467);
+            this.btnImprimir.Location = new System.Drawing.Point(507, 469);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 26);
             this.btnImprimir.TabIndex = 14;
@@ -410,33 +411,37 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Cant:";
             // 
-            // dgvDatos
+            // dgvproductos
             // 
-            this.dgvDatos.AllowUserToOrderColumns = true;
-            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDatos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.EnableHeadersVisualStyles = false;
-            this.dgvDatos.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvDatos.Location = new System.Drawing.Point(17, 261);
-            this.dgvDatos.Name = "dgvDatos";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDatos.Size = new System.Drawing.Size(578, 149);
-            this.dgvDatos.TabIndex = 13;
+            this.dgvproductos.AllowUserToAddRows = false;
+            this.dgvproductos.AllowUserToDeleteRows = false;
+            this.dgvproductos.AllowUserToOrderColumns = true;
+            this.dgvproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvproductos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvproductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproductos.Cursor = System.Windows.Forms.Cursors.No;
+            this.dgvproductos.Enabled = false;
+            this.dgvproductos.EnableHeadersVisualStyles = false;
+            this.dgvproductos.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvproductos.Location = new System.Drawing.Point(17, 261);
+            this.dgvproductos.Name = "dgvproductos";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvproductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvproductos.Size = new System.Drawing.Size(578, 149);
+            this.dgvproductos.TabIndex = 13;
             // 
             // txtPrecio
             // 
@@ -480,12 +485,29 @@
             this.txtDess.Size = new System.Drawing.Size(73, 22);
             this.txtDess.TabIndex = 32;
             // 
+            // txtCalcular
+            // 
+            this.txtCalcular.BackColor = System.Drawing.Color.SteelBlue;
+            this.txtCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.txtCalcular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtCalcular.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtCalcular.Location = new System.Drawing.Point(296, 416);
+            this.txtCalcular.Name = "txtCalcular";
+            this.txtCalcular.Size = new System.Drawing.Size(84, 26);
+            this.txtCalcular.TabIndex = 33;
+            this.txtCalcular.Text = "Calcular";
+            this.txtCalcular.UseVisualStyleBackColor = false;
+            this.txtCalcular.Click += new System.EventHandler(this.txtCalcular_Click);
+            // 
             // FormFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(616, 502);
+            this.Controls.Add(this.txtCalcular);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtDess);
             this.Controls.Add(this.label12);
@@ -504,7 +526,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbNumFactura);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.dgvDatos);
+            this.Controls.Add(this.dgvproductos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -520,7 +542,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,10 +580,11 @@
         private System.Windows.Forms.Label txtTotal1;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridView dgvproductos;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtDess;
+        private System.Windows.Forms.Button txtCalcular;
     }
 }

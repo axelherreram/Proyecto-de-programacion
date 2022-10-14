@@ -182,9 +182,9 @@ namespace Grupo2_FrondEnd.Properties {
         
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;style&gt;
         ///        table.border {
         ///            border-collapse: collapse;
@@ -203,7 +203,8 @@ namespace Grupo2_FrondEnd.Properties {
         ///&lt;/head&gt;
         ///&lt;body&gt;
         ///    &lt;table style=&quot;width:100%&quot;&gt;
-        ///        [resto de la cadena truncado]&quot;;.
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;width:20%&quot;&gt; [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {
