@@ -133,6 +133,16 @@ namespace Grupo2_FrondEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo {
+            get {
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Limpiarxd {
             get {
                 object obj = ResourceManager.GetObject("Limpiarxd", resourceCulture);
@@ -146,6 +156,26 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap logoEmp {
             get {
                 object obj = ResourceManager.GetObject("logoEmp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoEmpresa {
+            get {
+                object obj = ResourceManager.GetObject("logoEmpresa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoEmpresa1 {
+            get {
+                object obj = ResourceManager.GetObject("logoEmpresa1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -184,27 +214,29 @@ namespace Grupo2_FrondEnd.Properties {
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;es&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;/&gt;
+        ///    &lt;title&gt;Factura&lt;/title&gt;
         ///    &lt;style&gt;
         ///        table.border {
         ///            border-collapse: collapse;
         ///        }
+        ///        body {
+        ///            font-family: Arial;
+        ///        }
         ///
-        ///            table.border th {
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
+        ///        table.border th {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
         ///
-        ///            table.border td {
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
+        ///        table.border td {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
         ///    &lt;/style&gt;
         ///&lt;/head&gt;
         ///&lt;body&gt;
-        ///    &lt;table style=&quot;width:100%&quot;&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td style=&quot;width:20%&quot;&gt; [resto de la cadena truncado]&quot;;.
+        ///    &lt;table style=&quot;width [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {

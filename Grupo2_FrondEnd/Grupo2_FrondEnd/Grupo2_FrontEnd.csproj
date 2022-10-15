@@ -183,8 +183,10 @@
     <Content Include="Imagenes\disco-flexible.png" />
     <Content Include="Imagenes\disquete.png" />
     <Content Include="Imagenes\factura.png" />
+    <Content Include="Imagenes\fondo.png" />
     <Content Include="Imagenes\Limpiarxd.png" />
     <Content Include="Imagenes\lista.ico" />
+    <None Include="Imagenes\logoEmpresa.png" />
     <Content Include="Imagenes\lupa %281%29.png" />
     <Content Include="Imagenes\lupa.png" />
     <Content Include="Imagenes\pexels-kseniya-lapteva-9175397.jpg" />

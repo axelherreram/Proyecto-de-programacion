@@ -91,7 +91,7 @@
             this.lbHora.AutoSize = true;
             this.lbHora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbHora.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHora.Location = new System.Drawing.Point(528, 59);
+            this.lbHora.Location = new System.Drawing.Point(503, 59);
             this.lbHora.Name = "lbHora";
             this.lbHora.Size = new System.Drawing.Size(21, 18);
             this.lbHora.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.lbFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbFecha.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.Location = new System.Drawing.Point(528, 33);
+            this.lbFecha.Location = new System.Drawing.Point(503, 33);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(25, 18);
             this.lbFecha.TabIndex = 5;
@@ -118,7 +118,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(472, 33);
+            this.label2.Location = new System.Drawing.Point(447, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 6;
@@ -128,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(472, 59);
+            this.label3.Location = new System.Drawing.Point(447, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 7;
@@ -265,7 +265,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(492, 9);
+            this.label7.Location = new System.Drawing.Point(467, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 16);
             this.label7.TabIndex = 16;
@@ -277,7 +277,7 @@
             this.lbNumFactura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbNumFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbNumFactura.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumFactura.Location = new System.Drawing.Point(528, 9);
+            this.lbNumFactura.Location = new System.Drawing.Point(503, 9);
             this.lbNumFactura.Name = "lbNumFactura";
             this.lbNumFactura.Size = new System.Drawing.Size(21, 18);
             this.lbNumFactura.TabIndex = 15;
@@ -469,12 +469,12 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(15, 224);
+            this.label13.Location = new System.Drawing.Point(14, 224);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 31;
-            this.label13.Text = "NOmbre";
+            this.label13.Text = "Nombre:";
             // 
             // txtDess
             // 

@@ -27,6 +27,7 @@ namespace Grupo2_FrondEnd
             InitializeComponent();
             this.ttMensaje.SetToolTip(this.btnBuscar, "Buscar");
             this.ttMensaje.SetToolTip(this.btnLimpiar, "Limpiar registros de la tabla");
+            this.ttMensaje.SetToolTip(this.btnImprimir, "Importar la factura a PDF");
         }
 
         private void horaFecha_Tick(object sender, EventArgs e)
@@ -58,6 +59,10 @@ namespace Grupo2_FrondEnd
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+           
             //Guardar el archivo en local
            SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
@@ -70,7 +75,7 @@ namespace Grupo2_FrondEnd
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", lbFecha.Text);
 
             //Info cliente
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NIT", txtNit.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NUM", txtNit.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE",txtNombre.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DIRECCION", txtDireccion.Text);
 
@@ -87,6 +92,7 @@ namespace Grupo2_FrondEnd
                 filas += "</tr>";
                 total += decimal.Parse(row.Cells["subtotal"].Value.ToString());
             }
+            //Remplacamos, para escribir el total y el iva de la factura
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@IVA", txtIva.Text);
@@ -99,22 +105,21 @@ namespace Grupo2_FrondEnd
                 using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
                 {
                     //Creamos un nuevo documento y lo definimos como PDF
-                    Document pdfDoc = new Document(PageSize.A4, 0, 0, 0, 0);
+                    Document pdfDoc = new Document(PageSize.A4, 22, 22, 22, 22);
 
+                    //Escribimos en el documento
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     pdfDoc.Add(new Phrase(""));
 
                     //Agregamos un logo a nuestra factura
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoEmp, System.Drawing.Imaging.ImageFormat.Png);
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoEmpresa, System.Drawing.Imaging.ImageFormat.Png);
                     img.ScaleToFit(70, 70);
                     img.Alignment = iTextSharp.text.Image.UNDERLYING;
 
                     //Asignamos una posision a la imgagen
-                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top -30);
                     pdfDoc.Add(img);
-
-
                     
                     using (StringReader sr = new StringReader(PaginaHTML_Texto))
                     {
@@ -123,23 +128,41 @@ namespace Grupo2_FrondEnd
 
                     pdfDoc.Close();
                     stream.Close();
+                   
                 }
 
             }
-             
+                MessageBox.Show("Factura generada con exito", "Sistema de facturación");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al guardar la factura", "Sistema de facturación");
+
+            }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             int indice_fila = dgvproductos.Rows.Add();
             DataGridViewRow row = dgvproductos.Rows[indice_fila];
             string filas = string.Empty;
+            //Funionalidad aca
 
+            //arriba
             //txtPrecio.Text = objPro.precio;
             row.Cells["Cantidad"].Value = txtCantidad.Text;
             row.Cells["Descripcion"].Value = txtDess.Text;
             row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
             row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
+            }
+            catch (Exception)
+            {
 
+                dgvproductos.Rows.Clear();
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
         }
         
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -159,9 +182,10 @@ namespace Grupo2_FrondEnd
 
         private void txtCalcular_Click(object sender, EventArgs e)
         {
+            try
+            {
             double Total = 0;
             double iva = 0;
-            double ivaTotal = 0;
             foreach (DataGridViewRow row in dgvproductos.Rows)
             {
                 Total += Convert.ToDouble(row.Cells["subtotal"].Value);
@@ -170,7 +194,11 @@ namespace Grupo2_FrondEnd
             Total -= iva;
             txtIva.Text = iva.ToString("0. ##");
             txtTotal1.Text = Total.ToString("0. ##");
-
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
         }
     }
 }
