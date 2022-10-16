@@ -75,7 +75,7 @@ namespace Grupo2_FrondEnd
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", lbFecha.Text);
 
             //Info cliente
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NUM", txtNit.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NIT", txtNit.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE",txtNombre.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DIRECCION", txtDireccion.Text);
 
