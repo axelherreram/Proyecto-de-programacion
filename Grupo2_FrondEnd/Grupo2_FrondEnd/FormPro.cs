@@ -1,4 +1,5 @@
 ﻿using Grupo2_FrondEnd.Entidades;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,8 @@ namespace Grupo2_FrondEnd
             txtNombre.Clear();
             txtPrecio.Clear();
             txtStrock.Clear();
+            txtRam.Clear();
+            txtProcesador.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -48,13 +51,15 @@ namespace Grupo2_FrondEnd
             if (dialogResult == DialogResult.Yes)
             {
                 PropiProductos objBorar = new PropiProductos();
-                objBorar.idProd = txtId.Text;
+                objBorar.idPro = txtId.Text;
                 String Respuesta = objBorar.DELETE(objBorar);
                 MessageBox.Show(Respuesta);
                 txtId.Clear();
                 txtNombre.Clear();
                 txtPrecio.Clear();
                 txtStrock.Clear();
+                txtRam.Clear();
+                txtProcesador.Clear();
 
             }
             else if (dialogResult == DialogResult.No)
@@ -70,20 +75,16 @@ namespace Grupo2_FrondEnd
             {
                 PropiProductos objPro = new PropiProductos();
                 objPro.nombreProd = txtNombre.Text;
-                objPro.fechaCaducidad = dtmFechaC.Value;
                 objPro.precioProd = txtPrecio.Text;
                 objPro.stock = txtStrock.Text;
+                objPro.ram = txtRam.Text;
+                objPro.procesador = txtProcesador.Text;
+                string respon = objPro.PostProductos(objPro);
+                MessageBox.Show(respon);
 
-               objPro.PostProductos(objPro);
-                
-                //txtId.Clear();
-                //txtNombre.Clear();
-                //txtPrecio.Clear();
-                //txtStrock.Clear();
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Ocurrio un error");
             }
                 
@@ -92,12 +93,53 @@ namespace Grupo2_FrondEnd
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             PropiProductos objPro = new PropiProductos();
-            objPro.idProd= txtId.Text;
-            objPro.BuscarXidProductos(objPro);
+            objPro.idPro = txtId.Text;
 
-            txtNombre.Text = objPro.nombreProd;
-            txtPrecio.Text = objPro.precioProd;
-            txtStrock.Text = objPro.stock;
+            string RespuestaJson = objPro.BuscarXidProductos(objPro);
+            try
+            {
+                if (RespuestaJson == "null")
+                {
+                    MessageBox.Show("ERROR: no se encontro el articulo deseado");
+                    txtId.Clear();
+                }
+                else
+                {
+                    PropiProductos peli = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
+                    txtNombre.Text = peli.nombreProd;
+                    txtPrecio.Text = peli.precioProd;
+                    txtStrock.Text = peli.stock;
+                    txtProcesador.Text = peli.procesador;
+                    txtRam.Text = peli.ram;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btnActuliazar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PropiProductos objPro = new PropiProductos();
+                objPro.idPro = txtId.Text;
+                objPro.nombreProd = txtNombre.Text;
+                objPro.precioProd = txtPrecio.Text;
+                objPro.stock = txtStrock.Text;
+                objPro.ram = txtRam.Text;
+                objPro.procesador = txtProcesador.Text;
+                string respon = objPro.ActualizarXpro(objPro);
+                MessageBox.Show(respon);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error");
+            }
         }
     }
     }

@@ -16,7 +16,6 @@ namespace Grupo2_FrondEnd
         public FormCli()
         {
             InitializeComponent();
-            this.ttMensaje.SetToolTip(this.txtId, "No es necesario si va a ingresar un cliente");
             this.ttMensaje.SetToolTip(this.btnBuscar, "Buscar");
             this.ttMensaje.SetToolTip(this.btnActuliazar, "Actualizar");
             this.ttMensaje.SetToolTip(this.btnEliminar, "Eliminar");
@@ -58,7 +57,6 @@ namespace Grupo2_FrondEnd
             txtApellido.Clear();
             txtCorreo.Clear();
             txtDireccion.Clear();
-            txtId.Clear();
             txtNit.Clear();
             txtNombre.Clear();
         }

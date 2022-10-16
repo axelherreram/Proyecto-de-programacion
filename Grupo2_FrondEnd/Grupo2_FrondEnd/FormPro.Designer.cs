@@ -34,8 +34,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtmFechaC = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtStrock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,14 +44,20 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtProcesador = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtRam = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.PictureBox();
+            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActuliazar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 21);
+            this.label2.Location = new System.Drawing.Point(31, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
@@ -84,7 +88,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(102, 21);
+            this.txtNombre.Location = new System.Drawing.Point(116, 21);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(148, 22);
@@ -93,7 +97,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(102, 103);
+            this.txtPrecio.Location = new System.Drawing.Point(91, 58);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(148, 22);
@@ -104,39 +108,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(23, 103);
+            this.label3.Location = new System.Drawing.Point(12, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Precio:";
             // 
-            // dtmFechaC
-            // 
-            this.dtmFechaC.CalendarFont = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmFechaC.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmFechaC.Location = new System.Drawing.Point(206, 58);
-            this.dtmFechaC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dtmFechaC.Name = "dtmFechaC";
-            this.dtmFechaC.Size = new System.Drawing.Size(233, 22);
-            this.dtmFechaC.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(8, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Fecha de caducidad:";
-            // 
             // txtStrock
             // 
             this.txtStrock.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStrock.Location = new System.Drawing.Point(81, 159);
+            this.txtStrock.Location = new System.Drawing.Point(103, 96);
             this.txtStrock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtStrock.Name = "txtStrock";
             this.txtStrock.Size = new System.Drawing.Size(148, 22);
@@ -148,7 +130,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(7, 159);
+            this.label5.Location = new System.Drawing.Point(29, 96);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
@@ -196,6 +178,7 @@
             this.btnActuliazar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnActuliazar.TabIndex = 15;
             this.btnActuliazar.TabStop = false;
+            this.btnActuliazar.Click += new System.EventHandler(this.btnActuliazar_Click);
             // 
             // btnBuscar
             // 
@@ -244,27 +227,83 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.txtProcesador);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtRam);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.btnLimpiar);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtStrock);
             this.groupBox2.Controls.Add(this.txtPrecio);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dtmFechaC);
             this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(19, 191);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(563, 216);
+            this.groupBox2.Size = new System.Drawing.Size(563, 299);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.pngwing_com__4_;
+            this.pictureBox1.Location = new System.Drawing.Point(290, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(267, 280);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtProcesador
+            // 
+            this.txtProcesador.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProcesador.Location = new System.Drawing.Point(116, 179);
+            this.txtProcesador.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtProcesador.Name = "txtProcesador";
+            this.txtProcesador.Size = new System.Drawing.Size(148, 22);
+            this.txtProcesador.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(12, 179);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Procesador:";
+            // 
+            // txtRam
+            // 
+            this.txtRam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRam.Location = new System.Drawing.Point(91, 137);
+            this.txtRam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtRam.Name = "txtRam";
+            this.txtRam.Size = new System.Drawing.Size(148, 22);
+            this.txtRam.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(29, 139);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Ram:";
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpiar.Location = new System.Drawing.Point(521, 437);
+            this.btnLimpiar.Location = new System.Drawing.Point(6, 237);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(48, 43);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,7 +317,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(608, 502);
-            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -296,6 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,8 +348,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtmFechaC;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStrock;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -323,5 +360,10 @@
         private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.PictureBox btnLimpiar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtProcesador;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtRam;
+        private System.Windows.Forms.Label label4;
     }
 }

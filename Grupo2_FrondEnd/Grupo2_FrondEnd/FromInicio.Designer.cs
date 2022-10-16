@@ -39,14 +39,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +81,7 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(50, 314);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 46);
+            this.button3.Size = new System.Drawing.Size(175, 46);
             this.button3.TabIndex = 7;
             this.button3.Text = "Facturas";
             this.button3.UseVisualStyleBackColor = true;
@@ -108,7 +105,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.Black;
             this.btnClientes.Location = new System.Drawing.Point(50, 239);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(181, 46);
+            this.btnClientes.Size = new System.Drawing.Size(175, 46);
             this.btnClientes.TabIndex = 5;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -133,7 +130,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.Black;
             this.btnProductos.Location = new System.Drawing.Point(50, 161);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(181, 46);
+            this.btnProductos.Size = new System.Drawing.Size(175, 46);
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -142,9 +139,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.logoEmpresa;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(225, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -164,23 +161,12 @@
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContent.Controls.Add(this.pictureBox5);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelContent.Location = new System.Drawing.Point(231, 0);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(608, 502);
             this.panelContent.TabIndex = 1;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Grupo2_FrondEnd.Properties.Resources.fondo;
-            this.pictureBox5.Location = new System.Drawing.Point(159, 93);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(307, 300);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -201,9 +187,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,7 +203,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

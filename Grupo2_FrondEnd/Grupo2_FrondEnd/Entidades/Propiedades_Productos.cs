@@ -12,16 +12,18 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class PropiProductos
     {
-        public string idProd { get; set; }
+        public string idPro { get; set; }
         public string nombreProd { get; set; }
-        public DateTime fechaCaducidad { get; set; }
         public string precioProd { get; set; }
         public string stock { get; set; }
+        public string ram { get; set; }
+        public string procesador { get; set; }
+
         public string PostProductos(PropiProductos objProductos)
         {
             //Aqui es la llamada al back
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc");
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -48,7 +50,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //aqui se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc?id=" + objProductos.idProd);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos?idPro=" + objProductos.idPro);
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -61,10 +63,10 @@ namespace Grupo2_FrondEnd.Entidades
             }
             return Respuesta;
         }
-        public string Actualizar(PropiProductos objProductos)
+        public string ActualizarXpro(PropiProductos objProductos)
         {
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("hhttp://localhost:8080/produc");
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -88,7 +90,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //Se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/produc?id=8" + objProductos.idProd);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos?idPro=" + objProductos.idPro);
 
             //Armar mi peticion 
             request.ContentType = "application/json";

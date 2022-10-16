@@ -98,9 +98,9 @@ namespace Grupo2_FrondEnd
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@IVA", txtIva.Text);
 
 
+            //Abrimos el explorador para eligir el directorio para guardar la factura
             if (savefile.ShowDialog()== DialogResult.OK)
             {
-               
                 //crea el archivo en memoria
                 using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
                 {

@@ -220,10 +220,6 @@ namespace Grupo2_FrondEnd.Properties {
         ///        table.border {
         ///            border-collapse: collapse;
         ///        }
-        ///        body {
-        ///            font-family: Arial;
-        ///        }
-        ///
         ///        table.border th {
         ///            padding: 5px;
         ///            border: 1px solid black;
@@ -236,11 +232,33 @@ namespace Grupo2_FrondEnd.Properties {
         ///    &lt;/style&gt;
         ///&lt;/head&gt;
         ///&lt;body&gt;
-        ///    &lt;table style=&quot;width [resto de la cadena truncado]&quot;;.
+        ///    &lt;table style=&quot;width:100%&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;width:20%&quot;&gt;&lt;/td&gt; [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {
                 return ResourceManager.GetString("plantilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__4_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__5_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
