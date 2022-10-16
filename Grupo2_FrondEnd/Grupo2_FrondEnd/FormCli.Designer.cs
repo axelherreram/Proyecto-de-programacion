@@ -35,19 +35,19 @@
             this.btnActuliazar = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.PictureBox();
             this.btnGuardar = new System.Windows.Forms.PictureBox();
+            this.txtNit = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.PictureBox();
-            this.txtNit = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActuliazar)).BeginInit();
@@ -97,6 +97,7 @@
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActuliazar
             // 
@@ -108,6 +109,7 @@
             this.btnActuliazar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnActuliazar.TabIndex = 15;
             this.btnActuliazar.TabStop = false;
+            this.btnActuliazar.Click += new System.EventHandler(this.btnActuliazar_Click);
             // 
             // btnBuscar
             // 
@@ -119,6 +121,7 @@
             this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.TabStop = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -132,6 +135,27 @@
             this.btnGuardar.TabStop = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtNit
+            // 
+            this.txtNit.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNit.Location = new System.Drawing.Point(64, 35);
+            this.txtNit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNit.Name = "txtNit";
+            this.txtNit.Size = new System.Drawing.Size(125, 22);
+            this.txtNit.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 35);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "NIT:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtCorreo);
@@ -140,7 +164,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnLimpiar);
             this.groupBox2.Controls.Add(this.txtDireccion);
-            this.groupBox2.Controls.Add(this.txtApellido);
+            this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,27 +229,6 @@
             this.btnLimpiar.TabStop = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtNit
-            // 
-            this.txtNit.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNit.Location = new System.Drawing.Point(64, 35);
-            this.txtNit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(125, 22);
-            this.txtNit.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(10, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "NIT:";
-            // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,15 +237,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(148, 22);
             this.txtDireccion.TabIndex = 9;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(106, 101);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(148, 22);
-            this.txtApellido.TabIndex = 5;
             // 
             // label5
             // 
@@ -264,9 +258,18 @@
             this.label3.Location = new System.Drawing.Point(9, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Apellido:";
+            this.label3.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(106, 101);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(148, 22);
+            this.txtTelefono.TabIndex = 5;
             // 
             // FormCli
             // 
@@ -306,14 +309,14 @@
         private System.Windows.Forms.TextBox txtNit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox btnLimpiar;
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label3;
     }
 }

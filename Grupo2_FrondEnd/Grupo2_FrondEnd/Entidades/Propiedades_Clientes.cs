@@ -11,17 +11,17 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class Propiedades_Clientes
     {
-        public string idClientes { get; set; }
-        public string borrador { get; set; }
-        public string borrador1 { get; set; }
-        public string borrador2{ get; set; }
-        public string borrador3 { get; set; }
-        public string borrador4 { get; set; }
+        public string NIT { get; set; }
+        public string nombreClient { get; set; }
+        public string direccion { get; set; }
+        public string gmail { get; set; }
+        public string numtelefono { get; set; }
+
         public string PostClientes(Propiedades_Clientes objClientes)
         {
             //Aqui es la llamada al back
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera");
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -44,11 +44,11 @@ namespace Grupo2_FrondEnd.Entidades
             }
             return Respuesta;
         }
-        public string BuscarXidProductos(Propiedades_Clientes objClientes)
+        public string BuscarXNIT(Propiedades_Clientes objClientes)
         {
             //aqui se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objClientes.idClientes);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?NIT=" + objClientes.NIT);
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -64,7 +64,7 @@ namespace Grupo2_FrondEnd.Entidades
         public string Actualizar(Propiedades_Clientes objClientes)
         {
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objClientes.idClientes);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes");
 
             //Armar mi peticion 
             request.ContentType = "application/json";
@@ -84,11 +84,11 @@ namespace Grupo2_FrondEnd.Entidades
             }
             return Respuesta;
         }
-        public string DELETE(Propiedades_Clientes objProductos)
+        public string DELETE(Propiedades_Clientes objClientes)
         {
             //Se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("https://movie.azurewebsites.net/api/cartelera?imdbID=" + objProductos.idClientes);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?NIT=" + objClientes.NIT);
 
             //Armar mi peticion 
             request.ContentType = "application/json";

@@ -5,9 +5,7 @@
 package com.GrupoNo2.Controller;
 
 import com.GrupoNo2.Entity.Clientes;
-import com.GrupoNo2.Entity.Productos;
 import com.GrupoNo2.service.ClientesService;
-import com.GrupoNo2.service.ProductosService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -88,7 +88,7 @@ namespace Grupo2_FrondEnd
                 MessageBox.Show("Ocurrio un error");
             }
                 
-            }
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
