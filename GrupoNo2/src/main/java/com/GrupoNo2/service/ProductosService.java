@@ -23,7 +23,7 @@ public class ProductosService {
     }
     //Actualizar
      public Productos actualizarProd(Productos emp){
-        return productosRepo.save( emp);
+        return productosRepo.save(emp);
     }
      //Borrar por id
       public void eliminarId(Integer id){

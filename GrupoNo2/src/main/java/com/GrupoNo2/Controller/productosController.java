@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Axel
  */
 @RestController
-@RequestMapping("/produc")
+@RequestMapping("/api/productos")
 public class productosController {
      
     @Autowired
@@ -36,13 +36,13 @@ public class productosController {
     }
     
     @GetMapping
-    public Optional<Productos> ListarID(@RequestParam Integer id){
-    return productosSer.buscarId(id);
+    public Optional<Productos> ListarID(@RequestParam Integer idPro){
+    return productosSer.buscarId(idPro);
     }
     
     @DeleteMapping
-    public void eliminar(@RequestParam Integer id){
-    productosSer.eliminarId(id);
+    public void eliminar(@RequestParam Integer idPro){
+    productosSer.eliminarId(idPro);
     }
     
     @PutMapping

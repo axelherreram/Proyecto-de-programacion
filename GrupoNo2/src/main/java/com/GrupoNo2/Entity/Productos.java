@@ -3,32 +3,54 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.GrupoNo2.Entity;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 
 @Entity
 @Table (name = "Productos")
 public class Productos {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idPro;
     private String nombreProd;
     private double precioProd;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fechaCaducidad;
+    private String ram;
+    private String procesador;
     private int stock;
-
-    public Integer getIdProd() {
-        return id;
+    
+    //Get and set de las propiedades
+    public Integer getIdPro() {
+        return idPro;
+    }
+    
+    public void setIdPro(Integer idPro) {
+        this.idPro = idPro;
+    }
+    public String getRam() {
+        return ram;
     }
 
-    public void setIdProd(Integer idProd) {
-        this.id = idProd;
+    public void setRam(String ram) {
+        this.ram = ram;
+    }
+
+    public String getProcesador() {
+        return procesador;
+    }
+
+    public void setProcesador(String procesador) {
+        this.procesador = procesador;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String getNombreProd() {
@@ -46,21 +68,4 @@ public class Productos {
     public void setPrecioProd(double precioProd) {
         this.precioProd = precioProd;
     }
-
-    public Date getFechaCaducidad() {
-        return fechaCaducidad;
-    }
-
-    public void setFechaCaducidad(Date fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
-    }
-
-    public int getStrock() {
-        return stock;
-    }
-
-    public void setStrock(int strock) {
-        this.stock = strock;
-    }
-    
 }
