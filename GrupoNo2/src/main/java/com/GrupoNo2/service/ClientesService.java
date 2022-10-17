@@ -6,7 +6,6 @@ package com.GrupoNo2.service;
 
 import com.GrupoNo2.Entity.Clientes;
 import com.GrupoNo2.repo.ClientesRepo;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,16 +16,16 @@ public class ClientesService {
     private ClientesRepo clientesrepo;
     
     //Guardar
-    public Clientes IngresarClie(Clientes emp){
+    public Clientes Ingresar(Clientes emp){
         return clientesrepo.save(emp);
     }
     //Actualizar
-     public Clientes actualizarClie(Clientes emp){
+     public Clientes actualizar(Clientes emp){
         return clientesrepo.save(emp);
     }
      //Borrar por id
-      public void eliminarId(Integer id){
-        clientesrepo.deleteById(id);
+      public void eliminar(Integer nit){
+        clientesrepo.deleteById(nit);
     }
     //Buscar ID  
     public Optional <Clientes> buscarId (Integer id){

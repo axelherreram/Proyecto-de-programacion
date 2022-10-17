@@ -11,7 +11,7 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class Propiedades_Clientes
     {
-        public string NIT { get; set; }
+        public string nit { get; set; }
         public string nombreClient { get; set; }
         public string direccion { get; set; }
         public string gmail { get; set; }
@@ -48,7 +48,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //aqui se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?NIT=" + objClientes.NIT);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?nit=" + objClientes.nit);
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -88,7 +88,7 @@ namespace Grupo2_FrondEnd.Entidades
         {
             //Se manda la peticion al servidor
             string Respuesta = "";
-            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?NIT=" + objClientes.NIT);
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?nit=" + objClientes.nit);
 
             //Armar mi peticion 
             request.ContentType = "application/json";

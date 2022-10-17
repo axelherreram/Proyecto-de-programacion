@@ -103,6 +103,16 @@ namespace Grupo2_FrondEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clientesss {
+            get {
+                object obj = ResourceManager.GetObject("clientesss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disco_flexible {
             get {
                 object obj = ResourceManager.GetObject("disco-flexible", resourceCulture);
@@ -153,29 +163,9 @@ namespace Grupo2_FrondEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoEmp {
-            get {
-                object obj = ResourceManager.GetObject("logoEmp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logoEmpresa {
             get {
                 object obj = ResourceManager.GetObject("logoEmpresa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logoEmpresa1 {
-            get {
-                object obj = ResourceManager.GetObject("logoEmpresa1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +186,6 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap lupa__1_ {
             get {
                 object obj = ResourceManager.GetObject("lupa (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pexels_kseniya_lapteva_9175397 {
-            get {
-                object obj = ResourceManager.GetObject("pexels-kseniya-lapteva-9175397", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -248,16 +228,6 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap pngwing_com__4_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (4)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__5_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (5)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

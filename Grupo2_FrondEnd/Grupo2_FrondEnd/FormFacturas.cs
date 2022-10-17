@@ -16,6 +16,7 @@ using static System.Net.WebRequestMethods;
 using Grupo2_FrondEnd.Entidades;
 using iTextSharp.tool.xml.html;
 using static System.Net.Mime.MediaTypeNames;
+using Newtonsoft.Json;
 
 
 namespace Grupo2_FrondEnd
@@ -69,8 +70,8 @@ namespace Grupo2_FrondEnd
 
             //Leemos el HTMl
             string PaginaHTML_Texto = Properties.Resources.plantilla.ToString();
-            //Info factura
-            //paginaHtml_texto = paginaHtml_texto.Replace("@NRO", lbNumFactura.Text);
+                //Info factura
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NRO", lbNumFactura.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@HORA", lbHora.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", lbFecha.Text);
 
@@ -159,7 +160,6 @@ namespace Grupo2_FrondEnd
             }
             catch (Exception)
             {
-
                 dgvproductos.Rows.Clear();
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
@@ -167,12 +167,28 @@ namespace Grupo2_FrondEnd
         
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //PropiProductos objPro = new PropiProductos();
-
-            
-            
+            PropiProductos objPro = new PropiProductos();
+            objPro.idPro = txtid.Text;
+            string RespuestaJson = objPro.BuscarXidProductos(objPro);
+            try
+            {
+                if (RespuestaJson == "null")
+                {
+                    MessageBox.Show("ERROR: no se encontro el articulo deseado", "Sistema de facturación");
+                    txtid.Clear();
+                }
+                else
+                {
+                    PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
+                    txtDess.Text = prop.nombreProd;
+                    txtPrecio.Text = prop.precioProd;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
         }
-
         private void btmNuevoCli_Click(object sender, EventArgs e)
         {
             Form form = new FormNewCli(); 
@@ -199,6 +215,45 @@ namespace Grupo2_FrondEnd
             {
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Propiedades_Clientes objcliente = new Propiedades_Clientes();
+                objcliente.nit = txtNit.Text;
+                string RespuestaJson = objcliente.BuscarXNIT(objcliente);
+                if (RespuestaJson == "null")
+                {
+                    MessageBox.Show("ERROR: no se encontro el cliente deseado", "Sistema de facturación");
+                    txtNit.Clear();
+                }
+                else
+                {
+                    Propiedades_Clientes clie = JsonConvert.DeserializeObject<Propiedades_Clientes>(RespuestaJson);
+                    txtNit.Text = clie.nit;
+                    txtNombre.Text = clie.nombreClient;
+                    txtDireccion.Text = clie.direccion;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
+        }
+
+        private void txtLimpiarRR_Click(object sender, EventArgs e)
+        {
+            txtDireccion.Clear();
+            txtNit.Clear();
+            txtNombre.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();
+            txtCantidad.Clear();
+            txtid.Clear();
+
         }
     }
 }

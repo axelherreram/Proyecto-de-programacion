@@ -6,7 +6,6 @@ package com.GrupoNo2.Controller;
 
 import com.GrupoNo2.Entity.Clientes;
 import com.GrupoNo2.service.ClientesService;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,22 +26,22 @@ public class ClientesController {
     
     @PostMapping
     public Clientes insertar(@RequestBody Clientes empo){
-    return clientesSer.IngresarClie(empo);
+    return clientesSer.Ingresar(empo);
     }
     
     @GetMapping
-    public Optional<Clientes> ListarID(@RequestParam Integer NIT){
-    return clientesSer.buscarId(NIT);
+    public Optional<Clientes> ListarID(@RequestParam Integer nit){
+    return clientesSer.buscarId(nit);
     }
     
     @DeleteMapping
-    public void eliminar(@RequestParam Integer NIT){
-    clientesSer.eliminarId(NIT);
+    public void eliminar(@RequestParam Integer nit){
+    clientesSer.eliminar(nit);
     }
     
     @PutMapping
     public Clientes actualizar(@RequestBody Clientes empo){
-    return clientesSer.actualizarClie(empo);
+    return clientesSer.actualizar(empo);
     }
     
 }

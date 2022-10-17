@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
@@ -50,7 +49,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lbNumFactura = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarPro = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new System.Windows.Forms.PictureBox();
@@ -67,24 +66,17 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtDess = new System.Windows.Forms.TextBox();
             this.txtCalcular = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLimpiarRR = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLimpiarRR)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "MODULO DE FACTURACIÓN";
             // 
             // lbHora
             // 
@@ -223,6 +215,7 @@
             this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.TabStop = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNit
             // 
@@ -283,14 +276,14 @@
             this.lbNumFactura.TabIndex = 15;
             this.lbNumFactura.Text = "   ";
             // 
-            // textBox3
+            // txtid
             // 
-            this.textBox3.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(111, 194);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(73, 22);
-            this.textBox3.TabIndex = 18;
+            this.txtid.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtid.Location = new System.Drawing.Point(111, 194);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(73, 22);
+            this.txtid.TabIndex = 18;
             // 
             // label8
             // 
@@ -333,7 +326,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(396, 413);
+            this.label10.Location = new System.Drawing.Point(396, 418);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 16);
@@ -445,10 +438,12 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(296, 194);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(73, 22);
             this.txtPrecio.TabIndex = 30;
             // 
@@ -478,10 +473,12 @@
             // 
             // txtDess
             // 
+            this.txtDess.BackColor = System.Drawing.Color.White;
             this.txtDess.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDess.Location = new System.Drawing.Point(111, 224);
             this.txtDess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDess.Name = "txtDess";
+            this.txtDess.ReadOnly = true;
             this.txtDess.Size = new System.Drawing.Size(73, 22);
             this.txtDess.TabIndex = 32;
             // 
@@ -501,12 +498,49 @@
             this.txtCalcular.UseVisualStyleBackColor = false;
             this.txtCalcular.Click += new System.EventHandler(this.txtCalcular_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.logoEmpresa;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(191, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 16);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "FACTURA ELECTRONICA";
+            // 
+            // txtLimpiarRR
+            // 
+            this.txtLimpiarRR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtLimpiarRR.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
+            this.txtLimpiarRR.Location = new System.Drawing.Point(558, 225);
+            this.txtLimpiarRR.Name = "txtLimpiarRR";
+            this.txtLimpiarRR.Size = new System.Drawing.Size(29, 30);
+            this.txtLimpiarRR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.txtLimpiarRR.TabIndex = 35;
+            this.txtLimpiarRR.TabStop = false;
+            this.txtLimpiarRR.Click += new System.EventHandler(this.txtLimpiarRR_Click);
+            // 
             // FormFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(616, 502);
+            this.Controls.Add(this.txtLimpiarRR);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtCalcular);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtDess);
@@ -521,7 +555,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscarPro);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbNumFactura);
@@ -532,7 +566,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.lbHora);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFacturas";
             this.Text = "FormFacturas";
@@ -543,14 +576,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLimpiarRR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbHora;
         private System.Windows.Forms.Label lbFecha;
         private System.Windows.Forms.Timer horaFecha;
@@ -569,7 +602,7 @@
         private System.Windows.Forms.Button btmNuevoCli;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbNumFactura;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox btnBuscarPro;
         private System.Windows.Forms.PictureBox btnLimpiar;
@@ -586,5 +619,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtDess;
         private System.Windows.Forms.Button txtCalcular;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox txtLimpiarRR;
     }
 }

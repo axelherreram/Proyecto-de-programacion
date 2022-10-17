@@ -53,27 +53,23 @@ namespace Grupo2_FrondEnd
             {
                 Propiedades_Clientes objcliente = new Propiedades_Clientes();
 
-                objcliente.NIT = txtNit.Text;
-                objcliente.NIT = txtNombre.Text;
-                objcliente.NIT = txtDireccion.Text;
-                objcliente.NIT = txtCorreo.Text;
-                objcliente.NIT = txtTelefono.Text;
+                objcliente.nit = txtNit.Text;
+                objcliente.nombreClient= txtNombre.Text;
+                objcliente.direccion = txtDireccion.Text;
+                objcliente.gmail = txtCorreo.Text;
+                if (ValidarEmail(txtCorreo.Text) == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Dirreccion de correo electronico invalida", "Sistema de facturación", MessageBoxButtons.OK);
+                }
+                objcliente.numtelefono = txtTelefono.Text;
                 string respon = objcliente.PostClientes(objcliente);
                 MessageBox.Show(respon);
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
-            
-
-                //if (ValidarEmail(txtCorreo.Text) == false)
-                //{
-                //    DialogResult dialogResult = MessageBox.Show("Dirreccion de correo electronico invalida", "Sistema de facturación", MessageBoxButtons.OK);
-                //}
-
-            
 
         }
 
@@ -90,20 +86,20 @@ namespace Grupo2_FrondEnd
         {
             Propiedades_Clientes objcliente = new Propiedades_Clientes();
 
-            objcliente.NIT = txtNit.Text;
+            objcliente.nit = txtNit.Text;
 
             string RespuestaJson = objcliente.BuscarXNIT(objcliente);
             try
             {
                 if (RespuestaJson == "null")
                 {
-                    MessageBox.Show("ERROR: no se encontro el articulo deseado");
+                    MessageBox.Show("ERROR: no se encontro el cliente deseado", "Sistema de facturación");
                     txtNit.Clear();
                 }
                 else
                 {
                     Propiedades_Clientes clie = JsonConvert.DeserializeObject<Propiedades_Clientes>(RespuestaJson);
-                    txtNit.Text = clie.NIT;
+                    txtNit.Text = clie.nit;
                     txtNombre.Text = clie.nombreClient;
                     txtDireccion.Text = clie.direccion;
                     txtCorreo.Text = clie.gmail;
@@ -113,7 +109,7 @@ namespace Grupo2_FrondEnd
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
 
@@ -123,7 +119,7 @@ namespace Grupo2_FrondEnd
             {
                 Propiedades_Clientes objcliente = new Propiedades_Clientes();
 
-                objcliente.NIT = txtNit.Text;
+                objcliente.nit = txtNit.Text;
                 objcliente.nombreClient = txtNombre.Text;
                 objcliente.direccion = txtDireccion.Text;
                 objcliente.gmail = txtCorreo.Text;
@@ -134,26 +130,37 @@ namespace Grupo2_FrondEnd
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
             DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "Sistema de facturación", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Propiedades_Clientes objcliente = new Propiedades_Clientes();
 
-                objcliente.NIT = txtNit.Text;
-                String Respuesta = objcliente.DELETE(objcliente);
-                MessageBox.Show(Respuesta);
-                
+                objcliente.nit = txtNit.Text;
+                objcliente.DELETE(objcliente);
+                MessageBox.Show("Registro eliminado correctamente", "Sistema de facturación");
+                txtTelefono.Clear();
+                txtCorreo.Clear();
+                txtDireccion.Clear();
+                txtNit.Clear();
+                txtNombre.Clear();
 
             }
             else if (dialogResult == DialogResult.No)
             {
 
+            }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
     }

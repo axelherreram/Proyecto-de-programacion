@@ -47,24 +47,31 @@ namespace Grupo2_FrondEnd
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "Sistema de facturación", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                PropiProductos objBorar = new PropiProductos();
-                objBorar.idPro = txtId.Text;
-                String Respuesta = objBorar.DELETE(objBorar);
-                MessageBox.Show(Respuesta);
-                txtId.Clear();
-                txtNombre.Clear();
-                txtPrecio.Clear();
-                txtStrock.Clear();
-                txtRam.Clear();
-                txtProcesador.Clear();
+                DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "Sistema de facturación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    PropiProductos objBorar = new PropiProductos();
+                    objBorar.idPro = txtId.Text;
+                    String Respuesta = objBorar.DELETE(objBorar);
+                    MessageBox.Show(Respuesta);
+                    txtId.Clear();
+                    txtNombre.Clear();
+                    txtPrecio.Clear();
+                    txtStrock.Clear();
+                    txtRam.Clear();
+                    txtProcesador.Clear();
 
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception)
             {
-
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
 
@@ -85,32 +92,33 @@ namespace Grupo2_FrondEnd
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
                 
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            PropiProductos objPro = new PropiProductos();
+           try
+            {
+                PropiProductos objPro = new PropiProductos();
             objPro.idPro = txtId.Text;
 
             string RespuestaJson = objPro.BuscarXidProductos(objPro);
-            try
-            {
+           
                 if (RespuestaJson == "null")
                 {
-                    MessageBox.Show("ERROR: no se encontro el articulo deseado");
+                    MessageBox.Show("ERROR: no se encontro el articulo deseado", "Sistema de facturación");
                     txtId.Clear();
                 }
                 else
                 {
-                    PropiProductos peli = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
-                    txtNombre.Text = peli.nombreProd;
-                    txtPrecio.Text = peli.precioProd;
-                    txtStrock.Text = peli.stock;
-                    txtProcesador.Text = peli.procesador;
-                    txtRam.Text = peli.ram;
+                    PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
+                    txtNombre.Text = prop.nombreProd;
+                    txtPrecio.Text = prop.precioProd;
+                    txtStrock.Text = prop.stock;
+                    txtProcesador.Text = prop.procesador;
+                    txtRam.Text = prop.ram;
                 }
 
             }
@@ -138,7 +146,7 @@ namespace Grupo2_FrondEnd
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
     }

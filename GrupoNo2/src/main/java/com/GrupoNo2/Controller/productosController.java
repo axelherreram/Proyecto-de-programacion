@@ -5,7 +5,6 @@
 package com.GrupoNo2.Controller;
 import com.GrupoNo2.Entity.Productos;
 import com.GrupoNo2.service.ProductosService;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

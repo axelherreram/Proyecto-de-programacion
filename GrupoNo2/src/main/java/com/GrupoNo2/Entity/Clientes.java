@@ -4,8 +4,6 @@
  */
 package com.GrupoNo2.Entity;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,18 +11,18 @@ import javax.persistence.Table;
 @Table (name = "Clientes")
 public class Clientes {
     @Id
-    private Integer NIT;
+    private Integer nit;
     private String nombreClient;
     private String direccion;
     private String gmail;
     private String numtelefono;
 
-    public Integer getNIT() {
-        return NIT;
+    public Integer getNit() {
+        return nit;
     }
 
-    public void setNIT(Integer NIT) {
-        this.NIT = NIT;
+    public void setNit(Integer nit) {
+        this.nit = nit;
     }
 
     public String getNombreClient() {
