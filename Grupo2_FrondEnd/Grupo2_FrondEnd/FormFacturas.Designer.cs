@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbHora = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
@@ -69,8 +69,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpearR = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbUbi = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).BeginInit();
@@ -414,14 +415,14 @@
             this.dgvproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvproductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvproductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvproductos.Cursor = System.Windows.Forms.Cursors.No;
             this.dgvproductos.Enabled = false;
@@ -429,12 +430,12 @@
             this.dgvproductos.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvproductos.Location = new System.Drawing.Point(17, 275);
             this.dgvproductos.Name = "dgvproductos";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvproductos.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvproductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvproductos.Size = new System.Drawing.Size(578, 149);
             this.dgvproductos.TabIndex = 13;
             // 
@@ -534,17 +535,17 @@
             this.btnLimpearR.TabStop = false;
             this.btnLimpearR.Click += new System.EventHandler(this.txtLimpiarRR_Click);
             // 
-            // label14
+            // lbUbi
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(207, 27);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(183, 16);
-            this.label14.TabIndex = 36;
-            this.label14.Text = " El Progreso Guastatoya";
+            this.lbUbi.AutoSize = true;
+            this.lbUbi.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUbi.ForeColor = System.Drawing.Color.Black;
+            this.lbUbi.Location = new System.Drawing.Point(207, 27);
+            this.lbUbi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUbi.Name = "lbUbi";
+            this.lbUbi.Size = new System.Drawing.Size(183, 16);
+            this.lbUbi.TabIndex = 36;
+            this.lbUbi.Text = " El Progreso Guastatoya";
             // 
             // label15
             // 
@@ -558,14 +559,31 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "+502 1234 5678";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(82, 473);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 31);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Registros";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FormFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(616, 516);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lbUbi);
             this.Controls.Add(this.btnLimpearR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -650,7 +668,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnLimpearR;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbUbi;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
     }
 }

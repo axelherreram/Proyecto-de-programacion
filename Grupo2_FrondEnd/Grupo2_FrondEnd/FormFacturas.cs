@@ -132,8 +132,32 @@ namespace Grupo2_FrondEnd
                 }
 
             }
-                MessageBox.Show("Factura generada con exito", "Sistema de facturación");
+                ClassFacturas objFac = new ClassFacturas();
+                //Info Empresa
+                objFac.idFac = Convert.ToInt32(lbNumFactura.Text);
+                objFac.nomEmpresa = "Payoner";
+                objFac.ubicacion = lbUbi.Text;
+                objFac.fechaEmision = DateTime.Parse(lbFecha.Text);
+                objFac.horaEmision = lbHora.Text;
+                //Info Cliente
+                objFac.nit = Convert.ToInt32(txtNit.Text);
+                objFac.nombreClient = txtNombre.Text;
+                objFac.direccion = txtDireccion.Text;
+                //Info producto
+                int indice_fila = dgvproductos.Rows.Add();
+                DataGridViewRow rows = dgvproductos.Rows[indice_fila];
+                string filassss = string.Empty;
+                objFac.cantidad =Convert.ToInt32(rows.Cells["Cantidad"].ToString());
+                objFac.descripcion = rows.Cells["Descripcion"].ToString();
+                objFac.precioU = Convert.ToDouble(rows.Cells["PrecioUnitario"].ToString());
+                objFac.subTotal = Convert.ToDouble(rows.Cells["subtotal"].ToString());
+                objFac.iva = Convert.ToDouble(txtIva.Text);
+                objFac.total = Convert.ToDouble(txtTotal1.Text);
 
+                string respon = objFac.PostFacturas(objFac);
+                MessageBox.Show(respon);
+
+                MessageBox.Show("Factura generada con exito", "Sistema de facturación");
             }
             catch (Exception)
             {
@@ -142,6 +166,8 @@ namespace Grupo2_FrondEnd
             }
 
         }
+
+        //Descontar ya es funcional
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -302,6 +328,12 @@ namespace Grupo2_FrondEnd
             txtCantidad.Clear();
             txtDireccion.Clear();
             txtid.Clear();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form form = new FormRegistro();
+            form.ShowDialog();
         }
     }
 }

@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\ClassFacturas.cs" />
     <Compile Include="Entidades\Propiedades_Clientes.cs" />
     <Compile Include="Entidades\Propiedades_Productos.cs" />
     <Compile Include="FormCli.cs">
@@ -133,6 +134,12 @@
     <Compile Include="FromInicio.Designer.cs">
       <DependentUpon>FromInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistro.Designer.cs">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCli.resx">
@@ -146,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPro.resx">
       <DependentUpon>FormPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistro.resx">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromInicio.resx">
       <DependentUpon>FromInicio.cs</DependentUpon>

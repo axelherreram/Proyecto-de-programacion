@@ -114,7 +114,7 @@ namespace Grupo2_FrondEnd
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }

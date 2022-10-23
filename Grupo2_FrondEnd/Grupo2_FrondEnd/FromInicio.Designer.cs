@@ -205,8 +205,9 @@
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormPrincipal";
             this.Text = "Sistema de facturación";
             this.panel1.ResumeLayout(false);
