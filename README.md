@@ -14,12 +14,12 @@
 ### Funcionalidades del sistema de facturación
 - ###### Modulo de productos
 	-  Agregar nuevos
-	-  Modificarlos
+	-  Actualizarlos
 	- Eliminarlos de la base de datos
 	- Buscar cualquiera que se desee
 - ###### Modulo de clientes
 	-  Agregar nuevos
-	-  Modificarlos
+	-  Actualizar informacion 
 	- Eliminarlos de la base de datos
 	- Buscar cualquiera que se desee
 - ###### Modulo de facturación
@@ -31,8 +31,12 @@
 - Realizacion de FrondEnd y BackEnd de un **sistema de facturación**
 
 	- ¿Quienes realizaron el BackEnd?
-		- pendiente
+		- Gerson Natanael Hernandez Aldana
+		- Pablo Jose Peña Morales
+		- Abmtony Jeovani Castañeda Rios
+		- Fernando Alejandro Sanchez Carias
 	- ¿Quienes realizarón el FrontEnd?
-		- pendiente
-
+		- Carolay Estephania Cante De Leon
+		- Cristoffer Alexis Falla Marroquin
+		- Axel Emiliano Herrera Muñoz
 ------------
