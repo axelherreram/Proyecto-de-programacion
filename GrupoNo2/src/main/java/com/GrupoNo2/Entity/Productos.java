@@ -20,8 +20,16 @@ public class Productos {
     private String ram;
     private String procesador;
     private int stock;
+    private String almacenamiento;
     
     //Get and set de las propiedades
+    public String getAlmacenamiento() {
+        return almacenamiento;
+    }
+    public void setAlmacenamiento(String almacenamiento) {    
+        this.almacenamiento = almacenamiento;
+    }
+
     public Integer getIdPro() {
         return idPro;
     }
