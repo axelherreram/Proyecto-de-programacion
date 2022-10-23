@@ -186,6 +186,9 @@
     <Content Include="Imagenes\fondo.png" />
     <Content Include="Imagenes\Limpiarxd.png" />
     <Content Include="Imagenes\lista.ico" />
+    <None Include="Resources\pngwing.com %287%29.png" />
+    <None Include="Resources\hombre.png" />
+    <None Include="Resources\rotacion.png" />
     <None Include="Resources\clientesss.png" />
     <None Include="Resources\pngwing.com %284%29.png" />
     <None Include="Imagenes\logoEmpresa.png" />

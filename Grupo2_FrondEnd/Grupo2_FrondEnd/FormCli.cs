@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Grupo2_FrondEnd.Entidades;
 using Newtonsoft.Json;
+using iTextSharp.tool.xml.html;
 
 namespace Grupo2_FrondEnd
 {
@@ -52,7 +53,6 @@ namespace Grupo2_FrondEnd
             try
             {
                 Propiedades_Clientes objcliente = new Propiedades_Clientes();
-
                 objcliente.nit = txtNit.Text;
                 objcliente.nombreClient= txtNombre.Text;
                 objcliente.direccion = txtDireccion.Text;
@@ -60,19 +60,20 @@ namespace Grupo2_FrondEnd
                 if (ValidarEmail(txtCorreo.Text) == false)
                 {
                     DialogResult dialogResult = MessageBox.Show("Dirreccion de correo electronico invalida", "Sistema de facturación", MessageBoxButtons.OK);
-                }
-                objcliente.numtelefono = txtTelefono.Text;
-                string respon = objcliente.PostClientes(objcliente);
-                MessageBox.Show(respon);
 
+                }
+                else
+                {
+                    objcliente.numtelefono = txtTelefono.Text;
+                    string respon = objcliente.PostClientes(objcliente);
+                    MessageBox.Show(respon);
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
-
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtTelefono.Clear();
@@ -85,9 +86,7 @@ namespace Grupo2_FrondEnd
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Propiedades_Clientes objcliente = new Propiedades_Clientes();
-
             objcliente.nit = txtNit.Text;
-
             string RespuestaJson = objcliente.BuscarXNIT(objcliente);
             try
             {
@@ -99,11 +98,19 @@ namespace Grupo2_FrondEnd
                 else
                 {
                     Propiedades_Clientes clie = JsonConvert.DeserializeObject<Propiedades_Clientes>(RespuestaJson);
-                    txtNit.Text = clie.nit;
-                    txtNombre.Text = clie.nombreClient;
-                    txtDireccion.Text = clie.direccion;
-                    txtCorreo.Text = clie.gmail;
-                    txtTelefono.Text = clie.numtelefono;
+                    if (clie == null)
+                    {
+                        //Nada
+                    }
+                    else
+                    {
+                        txtNit.Text = clie.nit;
+                        txtNombre.Text = clie.nombreClient;
+                        txtDireccion.Text = clie.direccion;
+                        txtCorreo.Text = clie.gmail;
+                        txtTelefono.Text = clie.numtelefono;
+                    }
+                   
                 }
 
             }
@@ -151,10 +158,6 @@ namespace Grupo2_FrondEnd
                 txtDireccion.Clear();
                 txtNit.Clear();
                 txtNombre.Clear();
-
-            }
-            else if (dialogResult == DialogResult.No)
-            {
 
             }
             }

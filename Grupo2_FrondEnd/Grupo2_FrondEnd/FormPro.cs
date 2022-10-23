@@ -43,6 +43,7 @@ namespace Grupo2_FrondEnd
             txtStrock.Clear();
             txtRam.Clear();
             txtProcesador.Clear();
+            txtAlmacenamient.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -62,10 +63,7 @@ namespace Grupo2_FrondEnd
                     txtStrock.Clear();
                     txtRam.Clear();
                     txtProcesador.Clear();
-
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                    txtAlmacenamient.Clear();
 
                 }
             }
@@ -83,9 +81,11 @@ namespace Grupo2_FrondEnd
                 PropiProductos objPro = new PropiProductos();
                 objPro.nombreProd = txtNombre.Text;
                 objPro.precioProd = txtPrecio.Text;
-                objPro.stock = txtStrock.Text;
+                objPro.stock =Convert.ToInt32(txtStrock.Text);
                 objPro.ram = txtRam.Text;
                 objPro.procesador = txtProcesador.Text;
+                objPro.almacenamiento = txtAlmacenamient.Text;
+
                 string respon = objPro.PostProductos(objPro);
                 MessageBox.Show(respon);
 
@@ -99,13 +99,11 @@ namespace Grupo2_FrondEnd
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           try
-            {
-                PropiProductos objPro = new PropiProductos();
+            PropiProductos objPro = new PropiProductos();
             objPro.idPro = txtId.Text;
-
             string RespuestaJson = objPro.BuscarXidProductos(objPro);
-           
+            try
+            {
                 if (RespuestaJson == "null")
                 {
                     MessageBox.Show("ERROR: no se encontro el articulo deseado", "Sistema de facturación");
@@ -114,11 +112,19 @@ namespace Grupo2_FrondEnd
                 else
                 {
                     PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
-                    txtNombre.Text = prop.nombreProd;
-                    txtPrecio.Text = prop.precioProd;
-                    txtStrock.Text = prop.stock;
-                    txtProcesador.Text = prop.procesador;
-                    txtRam.Text = prop.ram;
+                    if (prop == null)
+                    {
+                        //Nada
+                    }
+                    else
+                    {
+                        txtNombre.Text = prop.nombreProd;
+                        txtPrecio.Text = prop.precioProd;
+                        txtStrock.Text = Convert.ToString(prop.stock);
+                        txtProcesador.Text = prop.procesador;
+                        txtRam.Text = prop.ram;
+                        txtAlmacenamient.Text = prop.almacenamiento;
+                    }
                 }
 
             }
@@ -137,9 +143,10 @@ namespace Grupo2_FrondEnd
                 objPro.idPro = txtId.Text;
                 objPro.nombreProd = txtNombre.Text;
                 objPro.precioProd = txtPrecio.Text;
-                objPro.stock = txtStrock.Text;
+                objPro.stock = Convert.ToInt32 (txtStrock.Text);
                 objPro.ram = txtRam.Text;
                 objPro.procesador = txtProcesador.Text;
+                objPro.almacenamiento = txtAlmacenamient.Text;
                 string respon = objPro.ActualizarXpro(objPro);
                 MessageBox.Show(respon);
 

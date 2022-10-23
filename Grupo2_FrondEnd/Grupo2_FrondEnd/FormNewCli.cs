@@ -53,10 +53,12 @@ namespace Grupo2_FrondEnd
                 {
                     DialogResult dialogResult = MessageBox.Show("Dirreccion de correo electronico invalida", "Sistema de facturación", MessageBoxButtons.OK);
                 }
-                objcliente.numtelefono = txtTelefono.Text;
-                string respon = objcliente.PostClientes(objcliente);
-                MessageBox.Show(respon);
-
+                else
+                {
+                    objcliente.numtelefono = txtTelefono.Text;
+                    string respon = objcliente.PostClientes(objcliente);
+                    MessageBox.Show(respon);
+                }
             }
             catch (Exception)
             {

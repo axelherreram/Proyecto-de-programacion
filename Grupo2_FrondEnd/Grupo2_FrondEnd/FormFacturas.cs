@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -29,10 +28,12 @@ namespace Grupo2_FrondEnd
             this.ttMensaje.SetToolTip(this.btnBuscar, "Buscar");
             this.ttMensaje.SetToolTip(this.btnLimpiar, "Limpiar registros de la tabla");
             this.ttMensaje.SetToolTip(this.btnImprimir, "Importar la factura a PDF");
+            this.ttMensaje.SetToolTip(this.btnLimpearR, "Limpiar datos cliente/productos");
         }
 
         private void horaFecha_Tick(object sender, EventArgs e)
         {
+            //Hora y fecha acual dada por el sistema
             lbHora.Text = DateTime.Now.ToString("h:mm");
             lbFecha.Text = DateTime.Now.ToShortDateString();
 
@@ -45,6 +46,7 @@ namespace Grupo2_FrondEnd
 
         private void FormFacturas_Load(object sender, EventArgs e)
         {
+            //Creacion de las columnas del data grid
             dgvproductos.Columns.Add("Cantidad", "Cantidad");
             dgvproductos.Columns.Add("Descripcion", "Descripción");
             dgvproductos.Columns.Add("PrecioUnitario", "P/U");
@@ -54,7 +56,6 @@ namespace Grupo2_FrondEnd
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
             dgvproductos.Rows.Clear();
         }
 
@@ -62,8 +63,6 @@ namespace Grupo2_FrondEnd
         {
             try
             {
-
-           
             //Guardar el archivo en local
            SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss"));
@@ -102,11 +101,11 @@ namespace Grupo2_FrondEnd
             //Abrimos el explorador para eligir el directorio para guardar la factura
             if (savefile.ShowDialog()== DialogResult.OK)
             {
-                //crea el archivo en memoria
-                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
-                {
-                    //Creamos un nuevo documento y lo definimos como PDF
-                    Document pdfDoc = new Document(PageSize.A4, 22, 22, 22, 22);
+                    //crea el archivo en memoria
+                    using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
+                    {
+                     //Creamos un nuevo documento y lo definimos como PDF
+                     Document pdfDoc = new Document(PageSize.A4, 22, 22, 22, 22);
 
                     //Escribimos en el documento
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
@@ -134,10 +133,11 @@ namespace Grupo2_FrondEnd
 
             }
                 MessageBox.Show("Factura generada con exito", "Sistema de facturación");
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al guardar la factura", "Sistema de facturación");
+                MessageBox.Show("Ocurrio un error al imprimir la factura", "Sistema de facturación");
 
             }
 
@@ -146,17 +146,62 @@ namespace Grupo2_FrondEnd
         {
             try
             {
-            int indice_fila = dgvproductos.Rows.Add();
-            DataGridViewRow row = dgvproductos.Rows[indice_fila];
-            string filas = string.Empty;
-            //Funionalidad aca
+            //Aca se va a descontar
+            //Primera prueba
+            PropiProductos objPro = new PropiProductos();
+            objPro.idPro = txtid.Text;
+            string RespuestaJson = objPro.BuscarXidProductos(objPro);
+                if (RespuestaJson == null)
+                {
+                    MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+                }
+                else
+                {
+                    //Variables contenedoras prueba 1
+                    string contNombreProd = "";
+                    int contStock = 0;
+                    string contRam = "";
+                    string contProcesador = "";
+                    string contAlmacenamiento = "";
+                    PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
+                    txtDess.Text = prop.nombreProd;
+                    txtPrecio.Text = prop.precioProd;
+                    contNombreProd = prop.nombreProd;
+                    contStock = Convert.ToInt32(prop.stock);
+                    contRam = prop.ram;
+                    contProcesador = prop.procesador;
+                    contAlmacenamiento = prop.almacenamiento;
+                    //Condicional si el cliente pide mas del stock del producto
+                    int cantPro = Convert.ToInt32(txtCantidad.Text);
+                    if (cantPro > contStock)
+                    {
+                        MessageBox.Show("Lo sentimos no tenemos suficuente stock del producto", "Sistema de facturación");
+                    }
+                    else
+                    {
+                        //Descontamos cantidad comprada menos el stock del producto
+                        contStock -= cantPro;
+                        //Mandar los cambios al servidor
+                        objPro.idPro = txtid.Text;
+                        objPro.nombreProd = contNombreProd;
+                        objPro.precioProd = txtPrecio.Text;
+                        objPro.stock = contStock;
+                        objPro.ram = contRam;
+                        objPro.procesador = contProcesador;
+                        objPro.almacenamiento = contAlmacenamiento;
+                        string respon = objPro.ActualizarXpro(objPro);
+                        MessageBox.Show(respon);
 
-            //arriba
-            //txtPrecio.Text = objPro.precio;
-            row.Cells["Cantidad"].Value = txtCantidad.Text;
-            row.Cells["Descripcion"].Value = txtDess.Text;
-            row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
-            row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
+                        //Agregamos los campos al data grid y calculamos el subtotal
+                        int indice_fila = dgvproductos.Rows.Add();
+                        DataGridViewRow row = dgvproductos.Rows[indice_fila];
+                        string filas = string.Empty;
+                        row.Cells["Cantidad"].Value = txtCantidad.Text;
+                        row.Cells["Descripcion"].Value = txtDess.Text;
+                        row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
+                        row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
+                    }
+                }    
             }
             catch (Exception)
             {
@@ -164,14 +209,14 @@ namespace Grupo2_FrondEnd
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
-        
+        //Buscar producto para ingresar al dataGrid
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            try
+            {
             PropiProductos objPro = new PropiProductos();
             objPro.idPro = txtid.Text;
             string RespuestaJson = objPro.BuscarXidProductos(objPro);
-            try
-            {
                 if (RespuestaJson == "null")
                 {
                     MessageBox.Show("ERROR: no se encontro el articulo deseado", "Sistema de facturación");
@@ -189,11 +234,12 @@ namespace Grupo2_FrondEnd
                 MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
+
+        //Aca se va a ingresar el nuevo cliente
         private void btmNuevoCli_Click(object sender, EventArgs e)
         {
             Form form = new FormNewCli(); 
             form.ShowDialog();
-              
         }
 
         private void txtCalcular_Click(object sender, EventArgs e)
@@ -217,30 +263,32 @@ namespace Grupo2_FrondEnd
             }
         }
 
+        //Buscar cliete
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                Propiedades_Clientes objcliente = new Propiedades_Clientes();
-                objcliente.nit = txtNit.Text;
-                string RespuestaJson = objcliente.BuscarXNIT(objcliente);
+            Propiedades_Clientes objcliente = new Propiedades_Clientes();
+            objcliente.nit = txtNit.Text;
+            string RespuestaJson = objcliente.BuscarXNIT(objcliente);
                 if (RespuestaJson == "null")
                 {
-                    MessageBox.Show("ERROR: no se encontro el cliente deseado", "Sistema de facturación");
+                    MessageBox.Show("ERROR: no se encontro el cliente, Ingrese el cliente antes de facturar", "Sistema de facturación");
                     txtNit.Clear();
                 }
                 else
                 {
                     Propiedades_Clientes clie = JsonConvert.DeserializeObject<Propiedades_Clientes>(RespuestaJson);
-                    txtNit.Text = clie.nit;
+                    txtNit.Text = Convert.ToString(clie.nit);
                     txtNombre.Text = clie.nombreClient;
                     txtDireccion.Text = clie.direccion;
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+                MessageBox.Show("ERROR");
             }
         }
 
@@ -249,11 +297,11 @@ namespace Grupo2_FrondEnd
             txtDireccion.Clear();
             txtNit.Clear();
             txtNombre.Clear();
-            txtNombre.Clear();
+            txtDess.Clear();
             txtPrecio.Clear();
             txtCantidad.Clear();
+            txtDireccion.Clear();
             txtid.Clear();
-
         }
     }
 }

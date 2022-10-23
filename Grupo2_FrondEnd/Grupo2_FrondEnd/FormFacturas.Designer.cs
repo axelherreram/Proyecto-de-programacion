@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbHora = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
@@ -68,14 +68,16 @@
             this.txtCalcular = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLimpiarRR = new System.Windows.Forms.PictureBox();
+            this.btnLimpearR = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarPro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLimpiarRR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpearR)).BeginInit();
             this.SuspendLayout();
             // 
             // lbHora
@@ -137,7 +139,7 @@
             this.groupBox1.Controls.Add(this.txtNit);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 94);
+            this.groupBox1.Location = new System.Drawing.Point(17, 108);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -148,7 +150,7 @@
             // 
             // btmNuevoCli
             // 
-            this.btmNuevoCli.BackColor = System.Drawing.Color.SteelBlue;
+            this.btmNuevoCli.BackColor = System.Drawing.Color.Orange;
             this.btmNuevoCli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btmNuevoCli.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btmNuevoCli.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -240,13 +242,13 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnImprimir.BackColor = System.Drawing.Color.Orange;
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImprimir.Location = new System.Drawing.Point(507, 469);
+            this.btnImprimir.Location = new System.Drawing.Point(507, 483);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 26);
             this.btnImprimir.TabIndex = 14;
@@ -279,7 +281,7 @@
             // txtid
             // 
             this.txtid.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(111, 194);
+            this.txtid.Location = new System.Drawing.Point(111, 208);
             this.txtid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(73, 22);
@@ -290,7 +292,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(10, 196);
+            this.label8.Location = new System.Drawing.Point(10, 210);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 16);
@@ -301,7 +303,7 @@
             // 
             this.btnBuscarPro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarPro.Image = global::Grupo2_FrondEnd.Properties.Resources.lupa__1_;
-            this.btnBuscarPro.Location = new System.Drawing.Point(191, 194);
+            this.btnBuscarPro.Location = new System.Drawing.Point(191, 208);
             this.btnBuscarPro.Name = "btnBuscarPro";
             this.btnBuscarPro.Size = new System.Drawing.Size(28, 22);
             this.btnBuscarPro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -313,7 +315,7 @@
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpiar.Location = new System.Drawing.Point(12, 446);
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 460);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(45, 44);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +328,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(396, 418);
+            this.label10.Location = new System.Drawing.Point(396, 432);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 16);
@@ -338,7 +340,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(396, 443);
+            this.label9.Location = new System.Drawing.Point(396, 457);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 16);
@@ -347,13 +349,13 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCalcular.BackColor = System.Drawing.Color.Orange;
             this.btnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCalcular.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCalcular.Location = new System.Drawing.Point(511, 190);
+            this.btnCalcular.Location = new System.Drawing.Point(511, 204);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(84, 26);
             this.btnCalcular.TabIndex = 17;
@@ -366,7 +368,7 @@
             this.txtIva.AutoSize = true;
             this.txtIva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIva.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIva.Location = new System.Drawing.Point(464, 416);
+            this.txtIva.Location = new System.Drawing.Point(464, 430);
             this.txtIva.Name = "txtIva";
             this.txtIva.Size = new System.Drawing.Size(81, 18);
             this.txtIva.TabIndex = 26;
@@ -377,7 +379,7 @@
             this.txtTotal1.AutoSize = true;
             this.txtTotal1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal1.Location = new System.Drawing.Point(464, 443);
+            this.txtTotal1.Location = new System.Drawing.Point(464, 457);
             this.txtTotal1.Name = "txtTotal1";
             this.txtTotal1.Size = new System.Drawing.Size(85, 18);
             this.txtTotal1.TabIndex = 27;
@@ -386,7 +388,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(422, 195);
+            this.txtCantidad.Location = new System.Drawing.Point(422, 209);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(73, 22);
@@ -397,7 +399,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(372, 196);
+            this.label11.Location = new System.Drawing.Point(372, 210);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 16);
@@ -412,27 +414,27 @@
             this.dgvproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvproductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvproductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvproductos.Cursor = System.Windows.Forms.Cursors.No;
             this.dgvproductos.Enabled = false;
             this.dgvproductos.EnableHeadersVisualStyles = false;
             this.dgvproductos.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvproductos.Location = new System.Drawing.Point(17, 261);
+            this.dgvproductos.Location = new System.Drawing.Point(17, 275);
             this.dgvproductos.Name = "dgvproductos";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvproductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvproductos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvproductos.Size = new System.Drawing.Size(578, 149);
             this.dgvproductos.TabIndex = 13;
             // 
@@ -440,7 +442,7 @@
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(296, 194);
+            this.txtPrecio.Location = new System.Drawing.Point(296, 208);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
@@ -452,7 +454,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(243, 196);
+            this.label12.Location = new System.Drawing.Point(243, 210);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 16);
@@ -464,7 +466,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(14, 224);
+            this.label13.Location = new System.Drawing.Point(14, 238);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
@@ -475,7 +477,7 @@
             // 
             this.txtDess.BackColor = System.Drawing.Color.White;
             this.txtDess.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDess.Location = new System.Drawing.Point(111, 224);
+            this.txtDess.Location = new System.Drawing.Point(111, 238);
             this.txtDess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDess.Name = "txtDess";
             this.txtDess.ReadOnly = true;
@@ -484,13 +486,13 @@
             // 
             // txtCalcular
             // 
-            this.txtCalcular.BackColor = System.Drawing.Color.SteelBlue;
+            this.txtCalcular.BackColor = System.Drawing.Color.Orange;
             this.txtCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.txtCalcular.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtCalcular.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCalcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCalcular.Location = new System.Drawing.Point(296, 416);
+            this.txtCalcular.Location = new System.Drawing.Point(296, 430);
             this.txtCalcular.Name = "txtCalcular";
             this.txtCalcular.Size = new System.Drawing.Size(84, 26);
             this.txtCalcular.TabIndex = 33;
@@ -520,25 +522,51 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "FACTURA ELECTRONICA";
             // 
-            // txtLimpiarRR
+            // btnLimpearR
             // 
-            this.txtLimpiarRR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtLimpiarRR.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.txtLimpiarRR.Location = new System.Drawing.Point(558, 225);
-            this.txtLimpiarRR.Name = "txtLimpiarRR";
-            this.txtLimpiarRR.Size = new System.Drawing.Size(29, 30);
-            this.txtLimpiarRR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.txtLimpiarRR.TabIndex = 35;
-            this.txtLimpiarRR.TabStop = false;
-            this.txtLimpiarRR.Click += new System.EventHandler(this.txtLimpiarRR_Click);
+            this.btnLimpearR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpearR.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
+            this.btnLimpearR.Location = new System.Drawing.Point(558, 239);
+            this.btnLimpearR.Name = "btnLimpearR";
+            this.btnLimpearR.Size = new System.Drawing.Size(29, 30);
+            this.btnLimpearR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLimpearR.TabIndex = 35;
+            this.btnLimpearR.TabStop = false;
+            this.btnLimpearR.Click += new System.EventHandler(this.txtLimpiarRR_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(207, 27);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(183, 16);
+            this.label14.TabIndex = 36;
+            this.label14.Text = " El Progreso Guastatoya";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(238, 44);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(126, 16);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "+502 1234 5678";
             // 
             // FormFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(616, 502);
-            this.Controls.Add(this.txtLimpiarRR);
+            this.ClientSize = new System.Drawing.Size(616, 516);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.btnLimpearR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtCalcular);
@@ -577,7 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLimpiarRR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpearR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,6 +649,8 @@
         private System.Windows.Forms.Button txtCalcular;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox txtLimpiarRR;
+        private System.Windows.Forms.PictureBox btnLimpearR;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }

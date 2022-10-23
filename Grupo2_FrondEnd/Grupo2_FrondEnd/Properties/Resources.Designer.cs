@@ -143,9 +143,9 @@ namespace Grupo2_FrondEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fondo {
+        internal static System.Drawing.Bitmap hombre {
             get {
-                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                object obj = ResourceManager.GetObject("hombre", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -228,6 +228,26 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap pngwing_com__4_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__7_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rotacion {
+            get {
+                object obj = ResourceManager.GetObject("rotacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

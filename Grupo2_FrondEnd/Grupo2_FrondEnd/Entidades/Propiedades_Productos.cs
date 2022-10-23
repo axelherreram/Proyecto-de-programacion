@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace Grupo2_FrondEnd.Entidades
 {
@@ -15,16 +15,19 @@ namespace Grupo2_FrondEnd.Entidades
         public string idPro { get; set; }
         public string nombreProd { get; set; }
         public string precioProd { get; set; }
-        public string stock { get; set; }
+        public int stock { get; set; }
         public string ram { get; set; }
         public string procesador { get; set; }
+        public string almacenamiento { get; set; }
+
 
         public string PostProductos(PropiProductos objProductos)
         {
             //Aqui es la llamada al back
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos");
-
+            try
+            {
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "POST";
@@ -44,6 +47,11 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string BuscarXidProductos(PropiProductos objProductos)
@@ -51,7 +59,8 @@ namespace Grupo2_FrondEnd.Entidades
             //aqui se manda la peticion al servidor
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos?idPro=" + objProductos.idPro);
-
+            try
+            {
             request.ContentType = "application/json";
             request.Method = "GET";
 
@@ -61,13 +70,19 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string ActualizarXpro(PropiProductos objProductos)
         {
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos");
-
+            try
+            {
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -84,6 +99,11 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string DELETE(PropiProductos objProductos)
@@ -91,7 +111,8 @@ namespace Grupo2_FrondEnd.Entidades
             //Se manda la peticion al servidor
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/productos?idPro=" + objProductos.idPro);
-
+            try
+            {
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "DELETE";
@@ -102,6 +123,11 @@ namespace Grupo2_FrondEnd.Entidades
             {
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
+            }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
             }
             return Respuesta;
         }

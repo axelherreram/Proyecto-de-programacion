@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Grupo2_FrondEnd.Entidades
 {
@@ -22,7 +23,8 @@ namespace Grupo2_FrondEnd.Entidades
             //Aqui es la llamada al back
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes");
-
+            try
+            {
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "POST";
@@ -42,6 +44,11 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string BuscarXNIT(Propiedades_Clientes objClientes)
@@ -49,7 +56,8 @@ namespace Grupo2_FrondEnd.Entidades
             //aqui se manda la peticion al servidor
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?nit=" + objClientes.nit);
-
+            try
+            {
             request.ContentType = "application/json";
             request.Method = "GET";
 
@@ -59,13 +67,21 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string Actualizar(Propiedades_Clientes objClientes)
         {
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes");
+            try
+            {
 
+            
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -82,6 +98,11 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
             return Respuesta;
         }
         public string DELETE(Propiedades_Clientes objClientes)
@@ -89,7 +110,8 @@ namespace Grupo2_FrondEnd.Entidades
             //Se manda la peticion al servidor
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/clientes?nit=" + objClientes.nit);
-
+            try
+            {
             //Armar mi peticion 
             request.ContentType = "application/json";
             request.Method = "DELETE";
@@ -101,8 +123,12 @@ namespace Grupo2_FrondEnd.Entidades
                 var result = streamReader.ReadToEnd();
                 Respuesta = result.ToString();
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
             return Respuesta;
         }
-
     }
 }

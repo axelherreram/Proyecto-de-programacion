@@ -92,7 +92,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Image = global::Grupo2_FrondEnd.Properties.Resources.bote_de_basura;
+            this.btnEliminar.Image = global::Grupo2_FrondEnd.Properties.Resources.hombre;
             this.btnEliminar.Location = new System.Drawing.Point(459, 23);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(38, 34);
@@ -104,7 +104,7 @@
             // btnActuliazar
             // 
             this.btnActuliazar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActuliazar.Image = global::Grupo2_FrondEnd.Properties.Resources.actualizar;
+            this.btnActuliazar.Image = global::Grupo2_FrondEnd.Properties.Resources.rotacion;
             this.btnActuliazar.Location = new System.Drawing.Point(398, 23);
             this.btnActuliazar.Name = "btnActuliazar";
             this.btnActuliazar.Size = new System.Drawing.Size(38, 34);
@@ -180,7 +180,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.clientesss;
             this.pictureBox1.Location = new System.Drawing.Point(380, 15);
             this.pictureBox1.Name = "pictureBox1";

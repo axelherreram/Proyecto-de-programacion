@@ -44,6 +44,8 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAlmacenamient = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtProcesador = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -227,6 +229,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtAlmacenamient);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtProcesador);
             this.groupBox2.Controls.Add(this.label7);
@@ -240,17 +244,38 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 191);
+            this.groupBox2.Location = new System.Drawing.Point(19, 166);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(563, 299);
+            this.groupBox2.Size = new System.Drawing.Size(563, 324);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // txtAlmacenamient
+            // 
+            this.txtAlmacenamient.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlmacenamient.Location = new System.Drawing.Point(163, 217);
+            this.txtAlmacenamient.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAlmacenamient.Name = "txtAlmacenamient";
+            this.txtAlmacenamient.Size = new System.Drawing.Size(112, 22);
+            this.txtAlmacenamient.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(12, 219);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 20);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Almacenamiento:";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.pngwing_com__4_;
-            this.pictureBox1.Location = new System.Drawing.Point(290, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(290, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(267, 280);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -303,7 +328,7 @@
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpiar.Location = new System.Drawing.Point(6, 237);
+            this.btnLimpiar.Location = new System.Drawing.Point(6, 275);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(48, 43);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,5 +390,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRam;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtAlmacenamient;
+        private System.Windows.Forms.Label label8;
     }
 }
