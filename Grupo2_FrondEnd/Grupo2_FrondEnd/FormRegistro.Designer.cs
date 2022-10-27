@@ -38,9 +38,10 @@
             // 
             this.dgvTodo.BackgroundColor = System.Drawing.Color.White;
             this.dgvTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTodo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTodo.Location = new System.Drawing.Point(0, 0);
             this.dgvTodo.Name = "dgvTodo";
-            this.dgvTodo.Size = new System.Drawing.Size(800, 450);
+            this.dgvTodo.Size = new System.Drawing.Size(631, 450);
             this.dgvTodo.TabIndex = 0;
             // 
             // panel1
@@ -50,14 +51,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(631, 450);
             this.panel1.TabIndex = 1;
             // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(631, 450);
             this.Controls.Add(this.panel1);
             this.Name = "FormRegistro";
             this.Text = "Registro de facturas";

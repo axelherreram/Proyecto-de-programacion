@@ -24,12 +24,12 @@ namespace Grupo2_FrondEnd.Entidades
         public string direccion { get; set; }
 
         //Info producto
-        public int cantidad { get; set; }
+        public string cantidad { get; set; }
         public string descripcion { get; set; }
-        public double precioU { get; set; }
-        public double subTotal { get; set; }
-        public double iva { get; set; }
-        public double total { get; set; }
+        public string precioU { get; set; }
+        public string subTotal { get; set; }
+        public string iva { get; set; }
+        public string total { get; set; }
         
 
         public string PostFacturas(ClassFacturas objFac)

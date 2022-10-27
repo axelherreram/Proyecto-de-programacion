@@ -25,18 +25,17 @@ namespace Grupo2_FrondEnd
         public FormFacturas()
         {
             InitializeComponent();
+            lbNumFactura.Text = "1";
             this.ttMensaje.SetToolTip(this.btnBuscar, "Buscar");
             this.ttMensaje.SetToolTip(this.btnLimpiar, "Limpiar registros de la tabla");
             this.ttMensaje.SetToolTip(this.btnImprimir, "Importar la factura a PDF");
             this.ttMensaje.SetToolTip(this.btnLimpearR, "Limpiar datos cliente/productos");
-        }
-
-        private void horaFecha_Tick(object sender, EventArgs e)
-        {
-            //Hora y fecha acual dada por el sistema
             lbHora.Text = DateTime.Now.ToString("h:mm");
             lbFecha.Text = DateTime.Now.ToShortDateString();
-
+        }
+       
+        private void horaFecha_Tick(object sender, EventArgs e)
+        {
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -59,6 +58,7 @@ namespace Grupo2_FrondEnd
             dgvproductos.Rows.Clear();
         }
 
+      
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             try
@@ -128,35 +128,8 @@ namespace Grupo2_FrondEnd
 
                     pdfDoc.Close();
                     stream.Close();
-                   
-                }
-
+                    }
             }
-                ClassFacturas objFac = new ClassFacturas();
-                //Info Empresa
-                objFac.idFac = Convert.ToInt32(lbNumFactura.Text);
-                objFac.nomEmpresa = "Payoner";
-                objFac.ubicacion = lbUbi.Text;
-                objFac.fechaEmision = DateTime.Parse(lbFecha.Text);
-                objFac.horaEmision = lbHora.Text;
-                //Info Cliente
-                objFac.nit = Convert.ToInt32(txtNit.Text);
-                objFac.nombreClient = txtNombre.Text;
-                objFac.direccion = txtDireccion.Text;
-                //Info producto
-                int indice_fila = dgvproductos.Rows.Add();
-                DataGridViewRow rows = dgvproductos.Rows[indice_fila];
-                string filassss = string.Empty;
-                objFac.cantidad =Convert.ToInt32(rows.Cells["Cantidad"].ToString());
-                objFac.descripcion = rows.Cells["Descripcion"].ToString();
-                objFac.precioU = Convert.ToDouble(rows.Cells["PrecioUnitario"].ToString());
-                objFac.subTotal = Convert.ToDouble(rows.Cells["subtotal"].ToString());
-                objFac.iva = Convert.ToDouble(txtIva.Text);
-                objFac.total = Convert.ToDouble(txtTotal1.Text);
-
-                string respon = objFac.PostFacturas(objFac);
-                MessageBox.Show(respon);
-
                 MessageBox.Show("Factura generada con exito", "Sistema de facturación");
             }
             catch (Exception)
@@ -170,69 +143,62 @@ namespace Grupo2_FrondEnd
         //Descontar ya es funcional
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+
             //Aca se va a descontar
             //Primera prueba
             PropiProductos objPro = new PropiProductos();
             objPro.idPro = txtid.Text;
             string RespuestaJson = objPro.BuscarXidProductos(objPro);
-                if (RespuestaJson == null)
+            if (RespuestaJson == null)
+            {
+                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+            }
+            else
+            {
+                //Variables contenedoras prueba 1
+                string contNombreProd = "";
+                int contStock = 0;
+                string contRam = "";
+                string contProcesador = "";
+                string contAlmacenamiento = "";
+                PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
+                txtDess.Text = prop.nombreProd;
+                txtPrecio.Text = prop.precioProd;
+                contNombreProd = prop.nombreProd;
+                contStock = Convert.ToInt32(prop.stock);
+                contRam = prop.ram;
+                contProcesador = prop.procesador;
+                contAlmacenamiento = prop.almacenamiento;
+                //Condicional si el cliente pide mas del stock del producto
+                int cantPro = Convert.ToInt32(txtCantidad.Text);
+                if (cantPro > contStock)
                 {
-                    MessageBox.Show("Ocurrio un error", "Sistema de facturación");
+                    MessageBox.Show("Lo sentimos no tenemos suficuente stock del producto", "Sistema de facturación");
                 }
                 else
                 {
-                    //Variables contenedoras prueba 1
-                    string contNombreProd = "";
-                    int contStock = 0;
-                    string contRam = "";
-                    string contProcesador = "";
-                    string contAlmacenamiento = "";
-                    PropiProductos prop = JsonConvert.DeserializeObject<PropiProductos>(RespuestaJson);
-                    txtDess.Text = prop.nombreProd;
-                    txtPrecio.Text = prop.precioProd;
-                    contNombreProd = prop.nombreProd;
-                    contStock = Convert.ToInt32(prop.stock);
-                    contRam = prop.ram;
-                    contProcesador = prop.procesador;
-                    contAlmacenamiento = prop.almacenamiento;
-                    //Condicional si el cliente pide mas del stock del producto
-                    int cantPro = Convert.ToInt32(txtCantidad.Text);
-                    if (cantPro > contStock)
-                    {
-                        MessageBox.Show("Lo sentimos no tenemos suficuente stock del producto", "Sistema de facturación");
-                    }
-                    else
-                    {
-                        //Descontamos cantidad comprada menos el stock del producto
-                        contStock -= cantPro;
-                        //Mandar los cambios al servidor
-                        objPro.idPro = txtid.Text;
-                        objPro.nombreProd = contNombreProd;
-                        objPro.precioProd = txtPrecio.Text;
-                        objPro.stock = contStock;
-                        objPro.ram = contRam;
-                        objPro.procesador = contProcesador;
-                        objPro.almacenamiento = contAlmacenamiento;
-                        string respon = objPro.ActualizarXpro(objPro);
-                        MessageBox.Show(respon);
+                    //Descontamos cantidad comprada menos el stock del producto
+                    contStock -= cantPro;
+                    //Mandar los cambios al servidor
+                    objPro.idPro = txtid.Text;
+                    objPro.nombreProd = contNombreProd;
+                    objPro.precioProd = txtPrecio.Text;
+                    objPro.stock = contStock;
+                    objPro.ram = contRam;
+                    objPro.procesador = contProcesador;
+                    objPro.almacenamiento = contAlmacenamiento;
+                    string respon = objPro.ActualizarXpro(objPro);
+                    MessageBox.Show(respon);
 
-                        //Agregamos los campos al data grid y calculamos el subtotal
-                        int indice_fila = dgvproductos.Rows.Add();
-                        DataGridViewRow row = dgvproductos.Rows[indice_fila];
-                        string filas = string.Empty;
-                        row.Cells["Cantidad"].Value = txtCantidad.Text;
-                        row.Cells["Descripcion"].Value = txtDess.Text;
-                        row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
-                        row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
-                    }
-                }    
+                    //Agregamos los campos al data grid y calculamos el subtotal
+                    int indice_fila = dgvproductos.Rows.Add();
+                    DataGridViewRow row = dgvproductos.Rows[indice_fila];
+                    string filas = string.Empty;
+                    row.Cells["Cantidad"].Value = txtCantidad.Text;
+                    row.Cells["Descripcion"].Value = txtDess.Text;
+                    row.Cells["PrecioUnitario"].Value = txtPrecio.Text;
+                    row.Cells["subtotal"].Value = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecio.Text);
             }
-            catch (Exception)
-            {
-                dgvproductos.Rows.Clear();
-                MessageBox.Show("Ocurrio un error", "Sistema de facturación");
             }
         }
         //Buscar producto para ingresar al dataGrid
@@ -334,6 +300,36 @@ namespace Grupo2_FrondEnd
         {
             Form form = new FormRegistro();
             form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClassFacturas objFac = new ClassFacturas();
+            //Info Empresa
+
+            objFac.nomEmpresa = "Payoner";
+            objFac.ubicacion = lbUbi.Text;
+            objFac.fechaEmision = DateTime.Parse(lbFecha.Text);
+            objFac.horaEmision = lbHora.Text;
+            //Info Cliente
+            objFac.nit = Convert.ToInt32(txtNit.Text);
+            objFac.nombreClient = txtNombre.Text;
+            objFac.direccion = txtDireccion.Text;
+
+            objFac.iva = txtIva.Text;
+            objFac.total = txtTotal1.Text;
+
+            //Info producto
+            foreach (DataGridViewRow row in dgvproductos.Rows)
+            {
+                objFac.cantidad = row.Cells["Cantidad"].ToString();
+                objFac.descripcion = row.Cells["Descripcion"].ToString();
+                objFac.precioU = row.Cells["PrecioUnitario"].ToString();
+                objFac.subTotal = row.Cells["subtotal"].ToString();
+
+                string respon = objFac.PostFacturas(objFac);
+                MessageBox.Show(respon);
+            }
         }
     }
 }

@@ -65,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 516);
+            this.panel1.Size = new System.Drawing.Size(231, 550);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -183,7 +183,7 @@
             this.panelContent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelContent.Location = new System.Drawing.Point(231, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(608, 516);
+            this.panelContent.Size = new System.Drawing.Size(627, 550);
             this.panelContent.TabIndex = 1;
             // 
             // pictureBox7
@@ -191,7 +191,7 @@
             this.pictureBox7.Image = global::Grupo2_FrondEnd.Properties.Resources.pngwing_com__7_;
             this.pictureBox7.Location = new System.Drawing.Point(17, 12);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(579, 492);
+            this.pictureBox7.Size = new System.Drawing.Size(598, 535);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -201,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(839, 516);
+            this.ClientSize = new System.Drawing.Size(858, 550);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

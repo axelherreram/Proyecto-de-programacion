@@ -38,7 +38,17 @@ public class Factura {
         private double precioU;
         private double iva;
         private double total;
+        private double sobtotal;
 
+    public double getSobtotal() {
+        return sobtotal;
+    }
+
+    public void setSobtotal(double sobtotal) {
+        this.sobtotal = sobtotal;
+    }
+
+        
     public String getHoraEmision() {
         return horaEmision;
     }

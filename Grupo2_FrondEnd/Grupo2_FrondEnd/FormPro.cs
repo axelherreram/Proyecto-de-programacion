@@ -56,7 +56,7 @@ namespace Grupo2_FrondEnd
                     PropiProductos objBorar = new PropiProductos();
                     objBorar.idPro = txtId.Text;
                     String Respuesta = objBorar.DELETE(objBorar);
-                    MessageBox.Show(Respuesta);
+                    MessageBox.Show("Pruducto eliminado con exito","Sistema de facturación");
                     txtId.Clear();
                     txtNombre.Clear();
                     txtPrecio.Clear();
