@@ -17,9 +17,8 @@ import javax.persistence.Table;
 public class DFactura {
     
     //info cliente
-    @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int idFac; 
+        @Id
+        private int idDFac; 
         private Integer nit;
         private String nombreClient;
         private String direccion;
@@ -32,12 +31,12 @@ public class DFactura {
         private double total;
         private double sobtotal;
 
-    public int getIdFac() {
-        return idFac;
+    public int getIdDFac() {
+        return idDFac;
     }
 
-    public void setIdFac(int idFac) {
-        this.idFac = idFac;
+    public void setIdFac(int idDFac) {
+        this.idDFac = idDFac;
     }
 
     public Integer getNit() {

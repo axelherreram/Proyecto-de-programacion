@@ -4,6 +4,7 @@
  */
 package com.GrupoNo2.Controller;
 
+import com.GrupoNo2.Entity.Clientes;
 import com.GrupoNo2.Entity.Factura;
 import com.GrupoNo2.Entity.Productos;
 import com.GrupoNo2.service.FacturasService;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**

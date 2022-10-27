@@ -8,9 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
-import javax.persistence.Temporal;
-
 /**
  *
  * @author Axel
@@ -23,26 +20,60 @@ public class Factura {
         private int idFac;    
         private String nomEmpresa;    
         private String ubicacion;    
-        @Temporal(javax.persistence.TemporalType.DATE)
-        private Date fechaEmision;
+        private String fechaEmision;
         private String horaEmision;
-        
+         
         //info cliente
         private Integer nit;
         private String nombreClient;
         private String direccion;
+        
+        private int codPro;
+        private double precio;
+        private int cantPro;
+        private String descrip;
+
+    public int getCodPro() {
+        return codPro;
+    }
+
+    public void setCodPro(int codPro) {
+        this.codPro = codPro;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getCantPro() {
+        return cantPro;
+    }
+
+    public void setCantPro(int cantPro) {
+        this.cantPro = cantPro;
+    }
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String descrip) {
+        this.descrip = descrip;
+    }
+        
+    
        
-        /*
-        //Info producto
-        private int cantidad;    
-        private String descripcion;
-        private double precioU;
-        private double iva;
-        private double total;
-        private double sobtotal;
-*/
-        
-        
+    public String getFechaEmision() {
+        return fechaEmision;
+    }
+
+    public void setFechaEmision(String fechaEmision) {
+        this.fechaEmision = fechaEmision;
+    }
     public String getHoraEmision() {
         return horaEmision;
     }
@@ -67,13 +98,6 @@ public class Factura {
         this.nomEmpresa = nomEmpresa;
     }
 
-    public Date getFechaEmision() {
-        return fechaEmision;
-    }
-
-    public void setFechaEmision(Date fechaEmision) {
-        this.fechaEmision = fechaEmision;
-    }
 
     public int getIdFac() {
         return idFac;
