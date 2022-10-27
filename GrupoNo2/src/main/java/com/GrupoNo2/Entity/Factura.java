@@ -32,6 +32,7 @@ public class Factura {
         private String nombreClient;
         private String direccion;
        
+        /*
         //Info producto
         private int cantidad;    
         private String descripcion;
@@ -39,15 +40,8 @@ public class Factura {
         private double iva;
         private double total;
         private double sobtotal;
-
-    public double getSobtotal() {
-        return sobtotal;
-    }
-
-    public void setSobtotal(double sobtotal) {
-        this.sobtotal = sobtotal;
-    }
-
+*/
+        
         
     public String getHoraEmision() {
         return horaEmision;
@@ -64,15 +58,6 @@ public class Factura {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
         
     public String getNomEmpresa() {
         return nomEmpresa;
@@ -121,37 +106,4 @@ public class Factura {
     public void setNombreClient(String nombreClient) {
         this.nombreClient = nombreClient;
     }
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-    public double getPrecioU() {
-        return precioU;
-    }
-
-    public void setPrecioU(double precioU) {
-        this.precioU = precioU;
-    }
-
-    public double getIva() {
-        return iva;
-    }
-
-    public void setIva(double iva) {
-        this.iva = iva;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-        
-        
-        
 }

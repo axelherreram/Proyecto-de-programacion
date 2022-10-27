@@ -298,8 +298,7 @@ namespace Grupo2_FrondEnd
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form form = new FormRegistro();
-            form.ShowDialog();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -316,16 +315,16 @@ namespace Grupo2_FrondEnd
             objFac.nombreClient = txtNombre.Text;
             objFac.direccion = txtDireccion.Text;
 
-            objFac.iva = txtIva.Text;
-            objFac.total = txtTotal1.Text;
+            //objFac.iva = txtIva.Text;
+            //objFac.total = txtTotal1.Text;
 
             //Info producto
             foreach (DataGridViewRow row in dgvproductos.Rows)
             {
-                objFac.cantidad = row.Cells["Cantidad"].ToString();
-                objFac.descripcion = row.Cells["Descripcion"].ToString();
-                objFac.precioU = row.Cells["PrecioUnitario"].ToString();
-                objFac.subTotal = row.Cells["subtotal"].ToString();
+                //objFac.cantidad = row.Cells["Cantidad"].ToString();
+                //objFac.descripcion = row.Cells["Descripcion"].ToString();
+                //objFac.precioU = row.Cells["PrecioUnitario"].ToString();
+                //objFac.subTotal = row.Cells["subtotal"].ToString();
 
                 string respon = objFac.PostFacturas(objFac);
                 MessageBox.Show(respon);
