@@ -92,7 +92,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Image = global::Grupo2_FrondEnd.Properties.Resources.hombre;
+            this.btnEliminar.Image = global::Grupo2_FrondEnd.Properties.Resources.borrar_usuario;
             this.btnEliminar.Location = new System.Drawing.Point(459, 23);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(38, 34);
@@ -234,10 +234,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpiar.Location = new System.Drawing.Point(509, 277);
+            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.limpio;
+            this.btnLimpiar.Location = new System.Drawing.Point(500, 268);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(48, 43);
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 52);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLimpiar.TabIndex = 18;
             this.btnLimpiar.TabStop = false;

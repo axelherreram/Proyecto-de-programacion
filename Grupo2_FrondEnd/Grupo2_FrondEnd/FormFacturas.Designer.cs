@@ -275,9 +275,9 @@
             this.lbNumFactura.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNumFactura.Location = new System.Drawing.Point(503, 9);
             this.lbNumFactura.Name = "lbNumFactura";
-            this.lbNumFactura.Size = new System.Drawing.Size(21, 18);
+            this.lbNumFactura.Size = new System.Drawing.Size(29, 18);
             this.lbNumFactura.TabIndex = 15;
-            this.lbNumFactura.Text = "   ";
+            this.lbNumFactura.Text = "   1";
             // 
             // txtid
             // 
@@ -315,10 +315,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
+            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.limpio;
             this.btnLimpiar.Location = new System.Drawing.Point(12, 460);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(45, 44);
+            this.btnLimpiar.Size = new System.Drawing.Size(62, 58);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLimpiar.TabIndex = 19;
             this.btnLimpiar.TabStop = false;
@@ -525,9 +525,9 @@
             // 
             this.btnLimpearR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpearR.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpearR.Location = new System.Drawing.Point(558, 239);
+            this.btnLimpearR.Location = new System.Drawing.Point(553, 239);
             this.btnLimpearR.Name = "btnLimpearR";
-            this.btnLimpearR.Size = new System.Drawing.Size(29, 30);
+            this.btnLimpearR.Size = new System.Drawing.Size(34, 30);
             this.btnLimpearR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLimpearR.TabIndex = 35;
             this.btnLimpearR.TabStop = false;
@@ -565,7 +565,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(151, 479);
+            this.button2.Location = new System.Drawing.Point(82, 479);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 25);
             this.button2.TabIndex = 39;

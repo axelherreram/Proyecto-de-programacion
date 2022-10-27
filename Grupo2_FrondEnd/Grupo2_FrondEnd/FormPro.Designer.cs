@@ -327,10 +327,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.Limpiarxd;
-            this.btnLimpiar.Location = new System.Drawing.Point(6, 275);
+            this.btnLimpiar.Image = global::Grupo2_FrondEnd.Properties.Resources.limpio;
+            this.btnLimpiar.Location = new System.Drawing.Point(6, 269);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(48, 43);
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 49);
             this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.TabStop = false;

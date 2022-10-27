@@ -98,4 +98,3 @@ C:\Users\falla\Documents\GitHub\Proyecto-de-programacion\Grupo2_FrondEnd\Grupo2_
 C:\Users\falla\Documents\GitHub\Proyecto-de-programacion\Grupo2_FrondEnd\Grupo2_FrondEnd\obj\Debug\Grupo2_FrontEnd.csproj.CopyComplete
 C:\Users\falla\Documents\GitHub\Proyecto-de-programacion\Grupo2_FrondEnd\Grupo2_FrondEnd\obj\Debug\Grupo2_FrondEnd.exe
 C:\Users\falla\Documents\GitHub\Proyecto-de-programacion\Grupo2_FrondEnd\Grupo2_FrondEnd\obj\Debug\Grupo2_FrondEnd.pdb
-C:\Users\Axel\Documents\GitHub\Proyecto-de-programacion\Grupo2_FrondEnd\Grupo2_FrondEnd\obj\Debug\Grupo2_FrondEnd.FormRegistro.resources

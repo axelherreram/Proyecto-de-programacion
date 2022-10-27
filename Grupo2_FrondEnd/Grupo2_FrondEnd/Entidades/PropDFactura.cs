@@ -12,7 +12,7 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class PropDFactura
     {
-        public int idFac { get; set; }
+        public int idDFac { get; set; }
         //info cliente
         public int nit { get; set; }
         public string nombreClient { get; set; }
@@ -32,8 +32,7 @@ namespace Grupo2_FrondEnd.Entidades
             //Aqui es la llamada al back
             string Respuesta = "";
             var request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/api/detallef");
-            try
-            {
+          
                 //Armar mi peticion 
                 request.ContentType = "application/json";
                 request.Method = "POST";
@@ -53,11 +52,6 @@ namespace Grupo2_FrondEnd.Entidades
                     var result = streamReader.ReadToEnd();
                     Respuesta = result.ToString();
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Campo vacio, no se puede procesar la petición", "Sistema de facturación");
-            }
             return Respuesta;
         }
 

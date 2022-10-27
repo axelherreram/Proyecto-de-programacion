@@ -300,35 +300,53 @@ namespace Grupo2_FrondEnd
         {
            
         }
+        public void guardarDD()
+        {
+            foreach (DataGridViewRow row in dgvproductos.Rows)
+            {
+                PropDFactura objDfac = new PropDFactura();
+                objDfac.iva = txtIva.Text;
+                objDfac.total = txtTotal1.Text;
+                //Info Cliente
+                objDfac.nit = Convert.ToInt32(txtNit.Text);
+                objDfac.nombreClient = txtNombre.Text;
+                objDfac.direccion = txtDireccion.Text;
+                objDfac.nit = Convert.ToInt32(txtNit.Text);
+                objDfac.nombreClient = txtNombre.Text;
+                objDfac.direccion = txtDireccion.Text;
+                objDfac.cantidad = row.Cells["Cantidad"].ToString();
+                objDfac.descripcion = row.Cells["Descripcion"].ToString();
+                objDfac.precioU = row.Cells["PrecioUnitario"].ToString();
+                objDfac.subTotal = row.Cells["subtotal"].ToString();
 
+                string responD = objDfac.PostDFacturas(objDfac);
+                MessageBox.Show(responD);
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             ClassFacturas objFac = new ClassFacturas();
             //Info Empresa
-
             objFac.nomEmpresa = "Payoner";
             objFac.ubicacion = lbUbi.Text;
-            objFac.fechaEmision = DateTime.Parse(lbFecha.Text);
+            objFac.fechaEmision = lbFecha.Text;
             objFac.horaEmision = lbHora.Text;
             //Info Cliente
-            objFac.nit = Convert.ToInt32(txtNit.Text);
+            objFac.nit = txtNit.Text;
             objFac.nombreClient = txtNombre.Text;
             objFac.direccion = txtDireccion.Text;
 
-            //objFac.iva = txtIva.Text;
-            //objFac.total = txtTotal1.Text;
+            objFac.descrip = txtDess.Text;
+            objFac.codPro = Convert.ToInt32(txtid.Text);
+            objFac.cantPro = Convert.ToInt32(txtCantidad.Text);
+            objFac.precio = Convert.ToDouble(txtPrecio.Text);
 
-            //Info producto
-            foreach (DataGridViewRow row in dgvproductos.Rows)
-            {
-                //objFac.cantidad = row.Cells["Cantidad"].ToString();
-                //objFac.descripcion = row.Cells["Descripcion"].ToString();
-                //objFac.precioU = row.Cells["PrecioUnitario"].ToString();
-                //objFac.subTotal = row.Cells["subtotal"].ToString();
 
-                string respon = objFac.PostFacturas(objFac);
-                MessageBox.Show(respon);
-            }
+            string respon = objFac.PostFacturas(objFac);
+            MessageBox.Show(respon);
+
+            guardarDD();
         }
     }
+
 }

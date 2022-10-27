@@ -73,6 +73,16 @@ namespace Grupo2_FrondEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap borrar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("borrar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bote_de_basura {
             get {
                 object obj = ResourceManager.GetObject("bote-de-basura", resourceCulture);
@@ -156,6 +166,16 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap Limpiarxd {
             get {
                 object obj = ResourceManager.GetObject("Limpiarxd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap limpio {
+            get {
+                object obj = ResourceManager.GetObject("limpio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -258,6 +278,16 @@ namespace Grupo2_FrondEnd.Properties {
         internal static System.Drawing.Bitmap salvar {
             get {
                 object obj = ResourceManager.GetObject("salvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sincronizacion {
+            get {
+                object obj = ResourceManager.GetObject("sincronizacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
