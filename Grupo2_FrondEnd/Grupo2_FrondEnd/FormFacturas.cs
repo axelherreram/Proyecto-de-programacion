@@ -339,26 +339,34 @@ namespace Grupo2_FrondEnd
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            //ClassFacturas objFac = new ClassFacturas();
-            ////Info Empresa
-            //objFac.nomEmpresa = "Payoner";
-            //objFac.ubicacion = lbUbi.Text;
-            //objFac.fechaEmision = lbFecha.Text;
-            //objFac.horaEmision = lbHora.Text;
-            ////Info Cliente
-            //objFac.nit = txtNit.Text;
-            //objFac.nombreClient = txtNombre.Text;
-            //objFac.direccion = txtDireccion.Text;
+            ClassFacturas objFac = new ClassFacturas();
+            //Info Empresa
+            objFac.nomEmpresa = "Payoner";
+            objFac.ubicacion = lbUbi.Text;
+            objFac.fechaEmision = lbFecha.Text;
+            objFac.horaEmision = lbHora.Text;
+            //Info Cliente
+            objFac.nit = txtNit.Text;
+            objFac.nombreClient = txtNombre.Text;
+            objFac.direccion = txtDireccion.Text;
 
-            //objFac.descrip = txtDess.Text;
-            //objFac.codPro = Convert.ToInt32(txtid.Text);
-            //objFac.cantPro = Convert.ToInt32(txtCantidad.Text);
-            //objFac.precio = Convert.ToDouble(txtPrecio.Text);
+            objFac.descrip = txtDess.Text;
+            objFac.codPro = Convert.ToInt32(txtid.Text);
+            objFac.cantPro = Convert.ToInt32(txtCantidad.Text);
+            objFac.precio = Convert.ToDouble(txtPrecio.Text);
 
-            //string respon = objFac.PostFacturas(objFac);
-            //MessageBox.Show(respon);
+            string respon = objFac.PostFacturas(objFac);
+            MessageBox.Show(respon);
 
             guardarDD();
+            aumentFF();
+        }
+        public void aumentFF()
+        {
+            int numFF = 0;
+            numFF = Convert.ToInt32(lbNumFactura.Text);
+            numFF += 1;
+            lbNumFactura.Text = Convert.ToString(numFF);
         }
     }
 
