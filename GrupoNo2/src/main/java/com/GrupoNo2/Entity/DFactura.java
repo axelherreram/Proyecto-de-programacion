@@ -5,6 +5,8 @@
 package com.GrupoNo2.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,33 +18,42 @@ public class DFactura {
     
     //info cliente
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int idFac; 
-        private Integer nit;
+        private int nit;
         private String nombreClient;
         private String direccion;
         
     //Info producto
         private int cantidad;    
         private String descripcion;
-        private double precioU;
-        private double iva;
-        private double total;
-        private double sobtotalT;
-        private double sobtotal;
+        private String precioU;
+        private String iva;
+        private String total;
+        private String sobtotalT;
+        private String sobtotal;
 
-    public double getSobtotalT() {
+    public int getIdFac() {
+        return idFac;
+    }
+
+    public void setIdFac(int idFac) {
+        this.idFac = idFac;
+    }
+
+    public String getSobtotalT() {
         return sobtotalT;
     }
 
-    public void setSobtotalT(double sobtotalT) {
+    public void setSobtotalT(String sobtotalT) {
         this.sobtotalT = sobtotalT;
     }
 
-    public Integer getNit() {
+    public int getNit() {
         return nit;
     }
 
-    public void setNit(Integer nit) {
+    public void setNit(int nit) {
         this.nit = nit;
     }
 
@@ -78,35 +89,35 @@ public class DFactura {
         this.descripcion = descripcion;
     }
 
-    public double getPrecioU() {
+    public String getPrecioU() {
         return precioU;
     }
 
-    public void setPrecioU(double precioU) {
+    public void setPrecioU(String precioU) {
         this.precioU = precioU;
     }
 
-    public double getIva() {
+    public String getIva() {
         return iva;
     }
 
-    public void setIva(double iva) {
+    public void setIva(String iva) {
         this.iva = iva;
     }
 
-    public double getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
-    public double getSobtotal() {
+    public String getSobtotal() {
         return sobtotal;
     }
 
-    public void setSobtotal(double sobtotal) {
+    public void setSobtotal(String sobtotal) {
         this.sobtotal = sobtotal;
     }
         

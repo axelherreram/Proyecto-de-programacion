@@ -12,7 +12,7 @@ namespace Grupo2_FrondEnd.Entidades
 {
     internal class PropDFactura
     {
-        public int idDFac { get; set; }
+        public int idFac { get; set; }
         //info cliente
         public int nit { get; set; }
         public string nombreClient { get; set; }
@@ -22,9 +22,9 @@ namespace Grupo2_FrondEnd.Entidades
         public string cantidad { get; set; }
         public string descripcion { get; set; }
         public string precioU { get; set; }
-        public string subTotal { get; set; }
+        public string sobtotal { get; set; }
         public string iva { get; set; }
-        public string subtotalT { get; set; }
+        public string sobtotalT { get; set; }
         public string total { get; set; }
 
 

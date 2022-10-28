@@ -319,17 +319,19 @@ namespace Grupo2_FrondEnd
 
             foreach (DataGridViewRow row in dgvproductos.Rows)
             {
+                //objDfac.idFac = Convert.ToInt32(lbNumFactura.Text);
+
                 objDfac.iva = txtIva.Text;
-                objDfac.subtotalT = txtTotal1.Text;
+                objDfac.sobtotalT = txtTotal1.Text;
                 objDfac.total = txtTTotal.Text;
 
                 objDfac.nit = Convert.ToInt32(txtNit.Text);
                 objDfac.nombreClient = txtNombre.Text;
                 objDfac.direccion = txtDireccion.Text;
-                objDfac.cantidad = row.Cells[0].ToString();
-                objDfac.descripcion = row.Cells[1].ToString();
-                objDfac.precioU = row.Cells[2].ToString();
-                objDfac.subTotal = row.Cells[3].ToString();
+                objDfac.cantidad = row.Cells[0].Value.ToString();
+                objDfac.descripcion = row.Cells[1].Value.ToString();
+                objDfac.precioU = row.Cells[2].Value.ToString();
+                objDfac.sobtotal = row.Cells[3].Value.ToString();
 
                 string responD = objDfac.PostDFacturas(objDfac);
                 MessageBox.Show(responD);
