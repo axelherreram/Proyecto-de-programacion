@@ -28,45 +28,6 @@ public class Factura {
         private String nombreClient;
         private String direccion;
         
-        private int codPro;
-        private double precio;
-        private int cantPro;
-        private String descrip;
-
-    public int getCodPro() {
-        return codPro;
-    }
-
-    public void setCodPro(int codPro) {
-        this.codPro = codPro;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public int getCantPro() {
-        return cantPro;
-    }
-
-    public void setCantPro(int cantPro) {
-        this.cantPro = cantPro;
-    }
-
-    public String getDescrip() {
-        return descrip;
-    }
-
-    public void setDescrip(String descrip) {
-        this.descrip = descrip;
-    }
-        
-    
-       
     public String getFechaEmision() {
         return fechaEmision;
     }

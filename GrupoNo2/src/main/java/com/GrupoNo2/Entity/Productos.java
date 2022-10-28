@@ -21,6 +21,16 @@ public class Productos {
     private String procesador;
     private int stock;
     private String almacenamiento;
+    private String fotoPro;
+
+    public String getFotoPro() {
+        return fotoPro;
+    }
+
+    public void setFotoPro(String fotoPro) {
+        this.fotoPro = fotoPro;
+    }
+    
     
     //Get and set de las propiedades
     public String getAlmacenamiento() {

@@ -5,8 +5,6 @@
 package com.GrupoNo2.Entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,7 +16,7 @@ public class DFactura {
     
     //info cliente
         @Id
-        private int idDFac; 
+        private int idFac; 
         private Integer nit;
         private String nombreClient;
         private String direccion;
@@ -29,14 +27,15 @@ public class DFactura {
         private double precioU;
         private double iva;
         private double total;
+        private double sobtotalT;
         private double sobtotal;
 
-    public int getIdDFac() {
-        return idDFac;
+    public double getSobtotalT() {
+        return sobtotalT;
     }
 
-    public void setIdFac(int idDFac) {
-        this.idDFac = idDFac;
+    public void setSobtotalT(double sobtotalT) {
+        this.sobtotalT = sobtotalT;
     }
 
     public Integer getNit() {

@@ -19,6 +19,7 @@ namespace Grupo2_FrondEnd.Entidades
         public string ram { get; set; }
         public string procesador { get; set; }
         public string almacenamiento { get; set; }
+        public string fotoPro { get; set; }
 
 
         public string PostProductos(PropiProductos objProductos)

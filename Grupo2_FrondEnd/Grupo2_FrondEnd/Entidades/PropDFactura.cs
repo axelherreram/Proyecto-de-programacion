@@ -24,6 +24,7 @@ namespace Grupo2_FrondEnd.Entidades
         public string precioU { get; set; }
         public string subTotal { get; set; }
         public string iva { get; set; }
+        public string subtotalT { get; set; }
         public string total { get; set; }
 
 

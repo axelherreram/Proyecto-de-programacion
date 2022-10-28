@@ -64,6 +64,7 @@ namespace Grupo2_FrondEnd
                     txtRam.Clear();
                     txtProcesador.Clear();
                     txtAlmacenamient.Clear();
+                    txtFotoPro.Clear();
 
                 }
             }
@@ -85,6 +86,7 @@ namespace Grupo2_FrondEnd
                 objPro.ram = txtRam.Text;
                 objPro.procesador = txtProcesador.Text;
                 objPro.almacenamiento = txtAlmacenamient.Text;
+                objPro.fotoPro= txtFotoPro.Text;
 
                 string respon = objPro.PostProductos(objPro);
                 MessageBox.Show(respon);
@@ -123,6 +125,8 @@ namespace Grupo2_FrondEnd
                         txtStrock.Text = Convert.ToString(prop.stock);
                         txtProcesador.Text = prop.procesador;
                         txtRam.Text = prop.ram;
+                        pbFotopro.Load(prop.fotoPro);
+                        txtFotoPro.Text = prop.fotoPro;
                         txtAlmacenamient.Text = prop.almacenamiento;
                     }
                 }

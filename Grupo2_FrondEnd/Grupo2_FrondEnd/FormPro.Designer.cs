@@ -46,20 +46,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtAlmacenamient = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbFotopro = new System.Windows.Forms.PictureBox();
             this.txtProcesador = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRam = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.PictureBox();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.txtFotoPro = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActuliazar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotopro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,9 +231,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtFotoPro);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtAlmacenamient);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.pbFotopro);
             this.groupBox2.Controls.Add(this.txtProcesador);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtRam);
@@ -272,15 +276,14 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Almacenamiento:";
             // 
-            // pictureBox1
+            // pbFotopro
             // 
-            this.pictureBox1.Image = global::Grupo2_FrondEnd.Properties.Resources.pngwing_com__4_;
-            this.pictureBox1.Location = new System.Drawing.Point(290, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 280);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.pbFotopro.Location = new System.Drawing.Point(290, 21);
+            this.pbFotopro.Name = "pbFotopro";
+            this.pbFotopro.Size = new System.Drawing.Size(267, 242);
+            this.pbFotopro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotopro.TabIndex = 22;
+            this.pbFotopro.TabStop = false;
             // 
             // txtProcesador
             // 
@@ -336,6 +339,27 @@
             this.btnLimpiar.TabStop = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // txtFotoPro
+            // 
+            this.txtFotoPro.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFotoPro.Location = new System.Drawing.Point(333, 276);
+            this.txtFotoPro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtFotoPro.Name = "txtFotoPro";
+            this.txtFotoPro.Size = new System.Drawing.Size(163, 22);
+            this.txtFotoPro.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(278, 276);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 20);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Foto:";
+            // 
             // FormPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -359,7 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotopro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,12 +409,14 @@
         private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.PictureBox btnLimpiar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbFotopro;
         private System.Windows.Forms.TextBox txtProcesador;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRam;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAlmacenamient;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtFotoPro;
+        private System.Windows.Forms.Label label9;
     }
 }
