@@ -70,7 +70,7 @@ namespace Grupo2_FrondEnd
             //Leemos el HTMl
             string PaginaHTML_Texto = Properties.Resources.plantilla.ToString();
                 //Info factura
-            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NRO", lbNumFactura.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NUM", lbNumFactura.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@HORA", lbHora.Text);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", lbFecha.Text);
 
@@ -316,11 +316,8 @@ namespace Grupo2_FrondEnd
         public void guardarDD()
         {
             PropDFactura objDfac = new PropDFactura();
-
             foreach (DataGridViewRow row in dgvproductos.Rows)
             {
-                //objDfac.idFac = Convert.ToInt32(lbNumFactura.Text);
-
                 objDfac.iva = txtIva.Text;
                 objDfac.sobtotalT = txtTotal1.Text;
                 objDfac.total = txtTTotal.Text;
